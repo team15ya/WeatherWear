@@ -36,7 +36,7 @@ function MypageScreen({ navigation }) {
         onPress={() =>
           navigation.navigate('Mainpage')}
       />
-      </View>
+    </View>
   );
 }
 
@@ -48,7 +48,7 @@ function MainpageScreen({ navigation }) {
         onPress={() =>
           navigation.navigate('Mypage')}
       />
-      </View>
+    </View>
   );
 }
 
@@ -66,12 +66,12 @@ function Root() {
   );
 }
 
-function App(){
-return(
-  <NavigationContainer>
-    <Root/>
-  </NavigationContainer>
-);
+function App() {
+  return (
+    <NavigationContainer>
+      <Root />
+    </NavigationContainer>
+  );
 }
 
 
