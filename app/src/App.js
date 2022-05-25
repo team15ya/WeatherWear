@@ -49,7 +49,11 @@ function Root() {
   return (
     <Stack.Navigator initialRouteName="InitialSettings">
       <Stack.Screen name="Location" component={LocationScreen} />
-      <Stack.Screen name="InitialSettings" component={InitialSettingScreen} />
+      <Stack.Screen 
+        name="InitialSettings" 
+        component={InitialSettingScreen} 
+        options={{headerShown:false}}
+      />
       <Stack.Screen name="Mypage" component={MypageScreen} />
       <Stack.Screen name="Mainpage" component={MainpageScreen} />
     </Stack.Navigator>
