@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, Pressable, StyleSheet, Dimensions } from 'react-native';
 // import { Ionicons, AntDesign } from '@expo/vector-icons';
 
+import ConstitSettingButton from '../components/ConstitutionSettingButton';
+
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -35,10 +37,10 @@ const InitialSettingScreen = ({ navigation }) => {
       </Pressable>
 
       <Text style={styles.title}>Constitution</Text>
-      <Pressable>
-        <Text>Dropdown</Text>
-        {/* <AntDesign name="down"/> */}
-      </Pressable>
+      <View style={styles.constitContainer}>
+        <Text style={styles.constitDescr}>sensitive to</Text>
+        <ConstitSettingButton/>
+      </View>
     </View>
   );
 }
@@ -91,6 +93,17 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: '#2F2F2F',
   },
+  constitContainer: {
+    flex:1,
+    marginTop: 20,
+    flexDirection: 'row',
+    alignContent:'center', 
+    justifyContent: 'center'
+  },
+  constitDescr:{
+    fontSize: 18,
+    color: '#7F7F7F',
+},
 });
 
 export default InitialSettingScreen;
