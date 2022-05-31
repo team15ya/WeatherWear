@@ -1,6 +1,7 @@
 import React from "react";
 import * as Font from "expo-font"
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Image } from 'react-native';
+import { width, height } from "app/src/config/globalStyles";
 import { Box, Center, NativeBaseProvider, Button } from "native-base";
 
 const InfoBox = () => {
@@ -12,8 +13,11 @@ const InfoBox = () => {
             letterSpacing: "lg"
         }}
         style = {{
-            width : 380,
-            height : 170
+            width : width*2100,
+            height : height*230,
+            paddingTop : height*60,
+            paddingLeft : width*50,
+            paddingRight : width*50
         }}
         >
             <GeneralInfo />
@@ -22,32 +26,22 @@ const InfoBox = () => {
 };
 
 const GeneralInfo = () => {
-    return <Box alignItems="center" flexDirection="row">
+    return <Box alignItems="center" bg="red" flexDirection="row" justifyContent='space-between' >
         <Box alignSelf="center" bg="green" _text={{
             fontSize: "md",
             fontWeight: "medium",
             color: "warmGray.50",
             letterSpacing: "lg"
         }}
-             style = {{
-                 width : 50,
-                 height : 60
-             }}
         >
-            icon
+            <Image
+                source={require('app/assets/images/rainday.png')}
+            />
         </Box>
-        <Box alignSelf="center" bg="green" _text={{
-            fontSize: "md",
-            fontWeight: "medium",
-            color: "warmGray.50",
-            letterSpacing: "lg"
-        }}
-             style = {{
-                 width : 50,
-                 height : 60
-             }}
-        >
-            12oC
+        <Box>
+            <Image
+                source={require('app/assets/images/12°C.png')}
+            />
         </Box>
         <Box alignSelf="center" bg="green" _text={{
             fontSize: "sm",
@@ -56,11 +50,14 @@ const GeneralInfo = () => {
             letterSpacing: "lg"
         }}
              style = {{
-                 width : 50,
-                 height : 60
+                 width : width*219,
+                 height : height*80
              }}
         >
-            icon TEMP value
+            <Image
+                source={require('app/assets/images/temperature.png')}
+            />
+            TEMP 27/15
         </Box>
         <Box alignSelf="center" bg="green" _text={{
             fontSize: "sm",
@@ -69,11 +66,14 @@ const GeneralInfo = () => {
             letterSpacing: "lg"
         }}
              style = {{
-                 width : 50,
-                 height : 60
+                 width : width*219,
+                 height : height*80
              }}
         >
-            icon WIND value
+            <Image
+                source={require('app/assets/images/wind.png')}
+            />
+            WIND 3m/s
         </Box>
         <Box alignSelf="center" bg="green" _text={{
             fontSize: "sm",
@@ -82,22 +82,64 @@ const GeneralInfo = () => {
             letterSpacing: "lg"
         }}
              style = {{
-                 width : 50,
-                 height : 60
+                 width : width*219,
+                 height : height*80
              }}
         >
-            icon PCPN value
+            <Image
+                source={require('app/assets/images/pcpn.png')}
+            />
+            PCPN 52%
         </Box>
     </Box>;
 };
 
 const ByTimeInfo = () => {
     return <Box alignItems="center" flexDirection="row">
-        <Button style={{ backgroundColor: '#707B90', width: 76, height: 160 }} onPress={() => console.log("hello world")}>6PM icon 13oC icon 30%</Button>
-        <Button style={{ backgroundColor: '#707B90', width: 76, height: 160 }} onPress={() => console.log("hello world")}>7PM icon 12oC icon 50%</Button>
-        <Button style={{ backgroundColor: '#707B90', width: 76, height: 160 }} onPress={() => console.log("hello world")}>8PM icon 10oC icon 80%</Button>
-        <Button style={{ backgroundColor: '#707B90', width: 76, height: 160 }} onPress={() => console.log("hello world")}>9PM icon 8oC icon 50%</Button>
-        <Button style={{ backgroundColor: '#707B90', width: 76, height: 160 }} onPress={() => console.log("hello world")}>10PM icon 8oC icon 20%</Button>
+        <Button style={{ backgroundColor: '#CAB0AE', width: width*410, height: height*230 }} onPress={() => console.log("hello world")}>
+            6PM
+            <Image source={require('app/assets/images/sun.png')} />
+            13oC
+            <Box flexDirection="row">
+                <Image source={require('app/assets/images/pcpntime.png')} />
+                30%</Box>
+        </Button>
+        <Button style={{ backgroundColor: '#707B90', width: width*410, height: height*230 }} onPress={() => console.log("hello world")}>
+            7PM
+            <Image source={require('app/assets/images/moon.png')} />
+            12oC
+            <Box flexDirection="row">
+                <Image source={require('app/assets/images/pcpntime.png')} />
+                50%
+            </Box>
+        </Button>
+        <Button style={{ backgroundColor: '#707B90', width: width*410, height: height*230 }} onPress={() => console.log("hello world")}>
+            8PM
+            <Image source={require('app/assets/images/moon.png')} />
+            10oC
+            <Box flexDirection="row">
+                <Image source={require('app/assets/images/pcpntime.png')} />
+                    80%
+            </Box>
+        </Button>
+        <Button style={{ backgroundColor: '#707B90', width: width*410, height: height*230 }} onPress={() => console.log("hello world")}>
+            9PM
+            <Image source={require('app/assets/images/moon.png')} />
+            8oC
+            <Box flexDirection="row">
+                <Image source={require('app/assets/images/pcpntime.png')} />
+                50%
+            </Box>
+        </Button>
+        <Button style={{ backgroundColor: '#707B90', width: width*410, height: 160 }} onPress={() => console.log("hello world")}>
+            10PM
+            <Image source={require('app/assets/images/raintime.png')} />
+            8oC
+            <Box flexDirection="row">
+                <Image source={require('app/assets/images/pcpntime.png')} />
+                20%
+            </Box>
+        </Button>
     </Box>;
 };
 
