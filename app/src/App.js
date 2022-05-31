@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import InitialSettingScreen from './pages/InitialSetting';
+import MypageScreen from './pages/Mypage';
 
 
 function LocationScreen({ navigation }) {
@@ -13,18 +14,6 @@ function LocationScreen({ navigation }) {
         title="마이페이지"
         onPress={() =>
           navigation.navigate('Mypage')}
-      />
-    </View>
-  );
-}
-
-function MypageScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button
-        title="메인페이지"
-        onPress={() =>
-          navigation.navigate('Mainpage')}
       />
     </View>
   );
