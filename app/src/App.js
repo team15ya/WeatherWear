@@ -43,7 +43,11 @@ function Root() {
         component={InitialSettingScreen} 
         options={{headerShown:false}}
       />
-      <Stack.Screen name="Mypage" component={MypageScreen} />
+      <Stack.Screen 
+        name="Mypage" 
+        component={MypageScreen} 
+        options={{headerShown:false}}
+      />
       <Stack.Screen name="Mainpage" component={MainpageScreen} />
     </Stack.Navigator>
   );
