@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import { View, Text, StyleSheet, Modal, Pressable } from 'react-native';
-// import { AntDesign } from '@expo/vector-icons';
+import { WithLocalSvg } from 'react-native-svg';
+
+import DownIcon from '../../assets/images/down.svg';
+
 
 export default function ConstitSettingButton(){
 
@@ -13,7 +16,11 @@ export default function ConstitSettingButton(){
                 style={styles.dropdown_default}
             >
                 <Text style={styles.dropdown_text}>NONE</Text>
-                {/* <AntDesign name="down"/> */}
+                <WithLocalSvg
+                    width={16}
+                    height={16}
+                    asset={DownIcon}
+                />
             </Pressable>
   
             <ConstitModal 
@@ -60,21 +67,23 @@ const ConstitModal = ({visible, onClose}) => {
 
 const styles = StyleSheet.create({
     dropdown_default: {
+        flexDirection: 'row',
         backgroundColor: 'white',
         borderWidth: 1,
         borderRadius: 45,
         borderColor: '#A3A3A3',
         width: 100,
         height: 30,
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-        paddingLeft: 22,
+        alignItems: 'center',
+        justifyContent: 'flex-start',
         marginLeft: 10,
     },
     dropdown_text: {
         fontSize: 13,
         fontWeight: '500',
         color: '#5F5F5F',
+        marginLeft: 23,
+        marginRight: 5,
     },
     modalView: {
         flex: 1,
