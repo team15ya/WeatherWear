@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-start',
         width: 100,
         height: 30,
-        marginTop: 363.5,
+        marginTop: 364,
         marginLeft: 126.5,
     },
     dropdown_modal_top: {

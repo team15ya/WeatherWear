@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet, Dimensions } from 'react-native';
-// import { Ionicons, AntDesign } from '@expo/vector-icons';
 
 import ConstitSettingButton from '../components/ConstitutionSettingButton';
 
@@ -33,7 +32,6 @@ const InitialSettingScreen = ({ navigation }) => {
         style={styles.info}
       >
         <Text style={styles.infoText}>(location info)</Text>
-        {/* <Ionicons name="search-sharp"/> */}
       </Pressable>
 
       <Text style={styles.title}>Constitution</Text>
@@ -52,8 +50,12 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     padding: 28,
+    paddingTop: 64,
   },
   header: {
+    position: 'absolute',
+    padding: 28,
+    paddingBottom: 20,
     fontSize: 26,
     fontWeight: '500',
     color: 'black',
