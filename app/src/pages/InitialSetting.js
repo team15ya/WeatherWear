@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet, Dimensions } from 'react-native';
+import { WithLocalSvg } from 'react-native-svg';
 
+import SearchIcon from '../../assets/images/search.svg';
 import ConstitSettingButton from '../components/ConstitutionSettingButton';
 
 
@@ -32,6 +34,11 @@ const InitialSettingScreen = ({ navigation }) => {
         style={styles.info}
       >
         <Text style={styles.infoText}>(location info)</Text>
+        <WithLocalSvg
+          width={32}
+          height={32}
+          asset={SearchIcon}
+        />
       </Pressable>
 
       <Text style={styles.title}>Constitution</Text>
@@ -68,7 +75,10 @@ const styles = StyleSheet.create({
     borderBottomColor: '#7F7F7F',
     marginBottom: 13,
     paddingBottom: 3,
-  },
+    paddingRight: 5,
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
+},
   infoText: {
     fontSize: 22,
     textAlignVertical: 'bottom',
