@@ -10,33 +10,12 @@ import InfoBox from './components/MainWeatherInfo'
 
 import InitialSettingScreen from './pages/InitialSetting';
 import MypageScreen from './pages/Mypage';
+import LocationScreen from './pages/Location';
 
 
-function LocationScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button
-        title="마이페이지"
-        onPress={() =>
-          navigation.navigate('Mypage')}
-      />
-    </View>
-  );
-}
 
-function InitialSettingScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button
-        title="위치선택"
-        onPress={() =>
-          navigation.navigate('Location')}
-      />
-    </View>
-  );
-}
 
-function MypageScreen({ navigation }) {
+function MyPageScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Button
@@ -51,26 +30,26 @@ function MypageScreen({ navigation }) {
 
 function MainpageScreen({ navigation }) {
   return (
-    <View style= {{ flex: 1, backgroundColor: '#FFF8F4' }}>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',  flexDirection: 'row' }}>
-            <Day /><Day /><Day /><Day /><Day /><Day /><Day />
+    <View style={{ flex: 1, backgroundColor: '#FFF8F4' }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
+        <Day /><Day /><Day /><Day /><Day /><Day /><Day />
+      </View>
+      <View style={{ flex: 4 }}>
+        <View style={{ flex: 1.3 }}>
+          <InfoButton />
         </View>
         <View style={{ flex: 4 }}>
-            <View style={{ flex: 1.3 }}>
-                <InfoButton />
-            </View>
-            <View style={{ flex: 4 }}>
-                <InfoBox />
-            </View>
+          <InfoBox />
+        </View>
 
-        </View>
-        <View style={{ flex: 9, alignItems: 'center', justifyContent: 'center' }}>
-            <Button
-                title="마이페이지(임시)"
-                onPress={() =>
-                    navigation.navigate('Mypage')}
-            />
-        </View>
+      </View>
+      <View style={{ flex: 9, alignItems: 'center', justifyContent: 'center' }}>
+        <Button
+          title="마이페이지(임시)"
+          onPress={() =>
+            navigation.navigate('Mypage')}
+        />
+      </View>
     </View>
   );
 }
@@ -82,16 +61,20 @@ const Stack = createNativeStackNavigator();
 function Root() {
   return (
     <Stack.Navigator initialRouteName="InitialSettings">
-      <Stack.Screen name="Location" component={LocationScreen} />
-      <Stack.Screen 
-        name="InitialSettings" 
-        component={InitialSettingScreen} 
-        options={{headerShown:false}}
+      <Stack.Screen
+        name="Location"
+        component={LocationScreen}
+        options={{ headerShown: false }}
+        />
+      <Stack.Screen
+        name="InitialSettings"
+        component={InitialSettingScreen}
+        options={{ headerShown: false }}
       />
-      <Stack.Screen 
-        name="Mypage" 
-        component={MypageScreen} 
-        options={{headerShown:false}}
+      <Stack.Screen
+        name="Mypage"
+        component={MyPageScreen}
+        options={{ headerShown: false }}
       />
       <Stack.Screen name="Mainpage" component={MainpageScreen} />
     </Stack.Navigator>

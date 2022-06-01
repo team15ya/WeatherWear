@@ -3,10 +3,27 @@ import { View, Text, StyleSheet } from "react-native";
 
 import SearchBar from '../components/SearchBar';
 
-const Location = () => {
+const LocationScreen = () => {
   return (
-    <SearchBar />
+    <View style={styles.layout}>
+      <Text style={styles.header}>Location</Text>
+      <SearchBar />
+    </View>
   );
 };
 
-export default Location;
+const styles = StyleSheet.create({
+  layout:{
+    flex:1,
+    backgroundColor:'white',
+  },
+  header:{
+    fontSize: 26,
+    fontWeight: '500',
+    color: 'black',
+    marginTop:28,
+    marginLeft:28
+  }
+})
+
+export default LocationScreen;
