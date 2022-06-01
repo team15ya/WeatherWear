@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, Pressable, StyleSheet, Dimensions } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useIsFocused } from '@react-navigation/native';
 // import { Ionicons, AntDesign } from '@expo/vector-icons';
 
 import ConstitSettingButton from '../components/ConstitutionSettingButton';
@@ -10,24 +8,6 @@ import ConstitSettingButton from '../components/ConstitutionSettingButton';
 const windowWidth = Dimensions.get('window').width;
 
 const InitialSettingScreen = ({ navigation }) => {
-  const [location, setLocation] = useState('');
-  const isFocused = useIsFocused();
-
-  const getLocationData = async () => {
-    try {
-      const value = await AsyncStorage.getItem('location')
-      if (value !== null) {
-        setLocation(value);
-      }
-    } catch (e) {
-      alert('user location information fetch 실패');
-    }
-  };
-
-  useEffect(() => {
-    getLocationData();
-  }, [isFocused]);
-
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Initial Setting</Text>
@@ -52,7 +32,7 @@ const InitialSettingScreen = ({ navigation }) => {
         onPress={() => navigation.navigate('Location')}
         style={styles.info}
       >
-        <Text style={styles.infoText}>{location}</Text>
+        <Text style={styles.infoText}>(location info)</Text>
         {/* <Ionicons name="search-sharp"/> */}
       </Pressable>
 
