@@ -2,10 +2,15 @@ import * as React from 'react';
 import { View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import BoxEx from './components/MainWeatherType';
 import Day from './components/MainDayList'
 import InfoButton from './components/MainWeatherType'
 import InfoBox from './components/MainWeatherInfo'
+
+import InitialSettingScreen from './pages/InitialSetting';
+import MypageScreen from './pages/Mypage';
+
 
 function LocationScreen({ navigation }) {
   return (
@@ -43,7 +48,7 @@ function MypageScreen({ navigation }) {
   );
 }
 
-/*메인페이지*/
+
 function MainpageScreen({ navigation }) {
   return (
     <View style= {{ flex: 1, backgroundColor: '#FFF8F4' }}>
@@ -78,8 +83,16 @@ function Root() {
   return (
     <Stack.Navigator initialRouteName="InitialSettings">
       <Stack.Screen name="Location" component={LocationScreen} />
-      <Stack.Screen name="InitialSettings" component={InitialSettingScreen} />
-      <Stack.Screen name="Mypage" component={MypageScreen} />
+      <Stack.Screen 
+        name="InitialSettings" 
+        component={InitialSettingScreen} 
+        options={{headerShown:false}}
+      />
+      <Stack.Screen 
+        name="Mypage" 
+        component={MypageScreen} 
+        options={{headerShown:false}}
+      />
       <Stack.Screen name="Mainpage" component={MainpageScreen} />
     </Stack.Navigator>
   );
