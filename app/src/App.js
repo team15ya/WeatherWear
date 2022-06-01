@@ -6,8 +6,6 @@ import BoxEx from './components/MainWeatherType';
 import Day from './components/MainDayList'
 import InfoButton from './components/MainWeatherType'
 import InfoBox from './components/MainWeatherInfo'
-import * as Font from "expo-font"
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 function LocationScreen({ navigation }) {
   return (

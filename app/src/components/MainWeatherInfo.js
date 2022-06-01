@@ -1,5 +1,4 @@
 import React from "react";
-import * as Font from "expo-font"
 import { Image } from 'react-native';
 import { width, height } from "app/src/config/globalStyles";
 import { Box, Center, NativeBaseProvider, Button } from "native-base";
