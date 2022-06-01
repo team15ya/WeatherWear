@@ -4,8 +4,6 @@ import { Fontisto } from "@expo/vector-icons";
 import Cloth from './components/Cloth.js';
 import ClothNoReview from "./components/ClothNoReview.js";
 
-const { width : SCREEN_WIDTH } = Dimensions.get("window");
-
 export default function App(){
   return <View style = {styles.container}>
     <View style = {styles.city}>
