@@ -29,23 +29,23 @@ const InitialSettingScreen = ({ navigation }) => {
   }, [isFocused]);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Initial Setting</Text>
+      <View style={styles.container}>
+        <Text style={styles.header}>Initial Setting</Text>
 
-      <Text style={styles.title}>ID</Text>
-      <Pressable
-        onPress={() => {}}
-        style={styles.info}
-      >
-        <Text style={styles.infoText}>ewha</Text>
-      </Pressable>
+        <Text style={styles.title}>ID</Text>
+        <Pressable
+            onPress={() => {}}
+            style={styles.info}
+        >
+          <Text style={styles.infoText}>ewha</Text>
+        </Pressable>
 
-      <Pressable
-        onPress={() => {}}
-        style={styles.logout}
-      >
-        <Text style={styles.logoutText}>LOGOUT</Text>
-      </Pressable>
+        <Pressable
+            onPress={() => {}}
+            style={styles.logout}
+        >
+          <Text style={styles.logoutText}>LOGOUT</Text>
+        </Pressable>
 
       <Text style={styles.title}>Location</Text>
       <Pressable
@@ -60,10 +60,12 @@ const InitialSettingScreen = ({ navigation }) => {
         />
       </Pressable>
 
-      <Text style={styles.title}>Constitution</Text>
-      <View style={styles.constitContainer}>
-        <Text style={styles.constitDescr}>sensitive to</Text>
-        <ConstitSettingButton/>
+        <Text style={styles.title}>Constitution</Text>
+        <View style={styles.constitContainer}>
+          <Text style={styles.constitDescr}>sensitive to</Text>
+          <ConstitSettingButton/>
+        </View>
+        <Pressable onPress={()=>navigation.navigate('Mypage')}><Text>press</Text></Pressable>
       </View>
       <Pressable onPress={()=>navigation.navigate('Mypage')}><Text>press</Text></Pressable>
     </View>
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
     paddingRight: 5,
     alignItems: 'flex-end',
     justifyContent: 'space-between',
-},
+  },
   infoText: {
     fontSize: 22,
     textAlignVertical: 'bottom',
@@ -129,13 +131,13 @@ const styles = StyleSheet.create({
     flex:1,
     marginTop: 20,
     flexDirection: 'row',
-    alignContent:'center', 
+    alignContent:'center',
     justifyContent: 'center'
   },
   constitDescr:{
     fontSize: 18,
     color: '#7F7F7F',
-},
+  },
 });
 
 export default InitialSettingScreen;

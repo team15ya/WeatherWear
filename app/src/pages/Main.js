@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, Dimensions, ImageBackground, Image, Button, TouchableOpacity } from "react-native";
 
-import BoxEx from '../components/MainWeatherType';
-import Day from '../components/MainDayList'
+import DayList from '../components/MainDayList'
 import InfoButton from '../components/MainWeatherType'
 import InfoBox from '../components/MainWeatherInfo'
 
@@ -41,7 +40,7 @@ const Main = () => {
         <Text>23:11</Text>
       </View>
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
-        <Day /><Day /><Day /><Day /><Day /><Day /><Day />
+        <DayList />
       </View>
       <View style={{ flex: 4 }}>
         <View style={{ flex: 1.3 }}>

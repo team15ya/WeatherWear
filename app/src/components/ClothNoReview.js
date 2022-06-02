@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
         width : '97%',
       },
       clothbox : {
+
         flex : 0.45,
         width : 155,
         backgroundColor : 'rgba(255,255,255,0.7)',
@@ -70,3 +71,4 @@ const styles = StyleSheet.create({
 })
 
 export default ClothNoReview;
+

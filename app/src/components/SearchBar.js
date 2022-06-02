@@ -21,17 +21,17 @@ const Searchbar = () => {
   }
 
   return (
-    <View style={styles.layout}>
-      <View style={styles.input}>
-        <TextInput
-          placeholder="location"
-          style={{ fontSize: 16 }}
-          onChangeText={(text) => setSearch(text)}
-        />
-        <TouchableOpacity onPress={() => setMapSearch(search)}>
-          <Image source={require('../components/search.png')} />
-        </TouchableOpacity>
-      </View>
+      <View style={styles.layout}>
+        <View style={styles.input}>
+          <TextInput
+              placeholder="location"
+              style={{ fontSize: 16 }}
+              onChangeText={(text) => setSearch(text)}
+          />
+          <TouchableOpacity onPress={() => setMapSearch(search)}>
+            <Image source={require('../components/search.png')} />
+          </TouchableOpacity>
+        </View>
       <Map location={mapSearch} />
       <TouchableOpacity style={styles.done}
         onPress={() => setLocationData(mapSearch)}>
