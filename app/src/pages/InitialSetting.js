@@ -47,18 +47,18 @@ const InitialSettingScreen = ({ navigation }) => {
           <Text style={styles.logoutText}>LOGOUT</Text>
         </Pressable>
 
-        <Text style={styles.title}>Location</Text>
-        <Pressable
-            onPress={() => navigation.navigate('Location')}
-            style={styles.info}
-        >
-          <Text style={styles.infoText}>{location}</Text>
-          <WithLocalSvg
-              width={32}
-              height={32}
-              asset={SearchIcon}
-          />
-        </Pressable>
+      <Text style={styles.title}>Location</Text>
+      <Pressable
+        onPress={() => navigation.navigate('Location')}
+        style={styles.info}
+      >
+        <Text style={styles.infoText}>{location}</Text>
+        <WithLocalSvg
+          width={32}
+          height={32}
+          asset={SearchIcon}
+        />
+      </Pressable>
 
         <Text style={styles.title}>Constitution</Text>
         <View style={styles.constitContainer}>
@@ -67,6 +67,8 @@ const InitialSettingScreen = ({ navigation }) => {
         </View>
         <Pressable onPress={()=>navigation.navigate('Mypage')}><Text>press</Text></Pressable>
       </View>
+      <Pressable onPress={()=>navigation.navigate('Mypage')}><Text>press</Text></Pressable>
+    </View>
   );
 }
 

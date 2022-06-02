@@ -28,8 +28,9 @@ const styles = StyleSheet.create({
         flex : 3,
         justifyContent : 'center',
         width : '97%',
-    },
-    clothbox : {
+      },
+      clothbox : {
+
         flex : 0.45,
         width : 155,
         backgroundColor : 'rgba(255,255,255,0.7)',
@@ -39,17 +40,17 @@ const styles = StyleSheet.create({
         justifyContent : 'center',
         alignItems : 'center',
         position : 'relative'
-    },
-    clothIcon :{
+      },
+      clothIcon :{
         width : 80,
         height : 80,
         marginTop : 10
-    },
-    clothNameContainer:{
-        flexDirection : 'row',
+      },
+      clothNameContainer:{
+        flexDirection : 'row', 
         flex : 0.1,
-    },
-    clothNameBox : {
+      },
+      clothNameBox : {
         flex : 0.455,
         backgroundColor : 'rgba(0,0,0,0.6)',
         alignItems : 'center',
@@ -58,15 +59,16 @@ const styles = StyleSheet.create({
         marginLeft : 20,
         borderBottomLeftRadius : 15,
         borderBottomRightRadius : 15
-    },
-    clothName : {
+      },
+      clothName : {
         color : 'white',
         fontSize : 15,
         fontWeight : '600'
-    },
-    button : {
+      },
+      button : {
         marginLeft : 120
-    }
+      }
 })
 
 export default ClothNoReview;
+

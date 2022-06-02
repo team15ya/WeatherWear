@@ -32,12 +32,12 @@ const Searchbar = () => {
             <Image source={require('../components/search.png')} />
           </TouchableOpacity>
         </View>
-        <Map location={mapSearch} />
-        <TouchableOpacity style={styles.done}
-                          onPress={() => setLocationData(mapSearch)}>
-          <Text style={{ color: 'white', fontSize: 18 }}>DONE</Text>
-        </TouchableOpacity>
-      </View>
+      <Map location={mapSearch} />
+      <TouchableOpacity style={styles.done}
+        onPress={() => setLocationData(mapSearch)}>
+        <Text style={{ color: 'white', fontSize: 18 }}>DONE</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
