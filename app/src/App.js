@@ -12,18 +12,12 @@ import InitialSettingScreen from './pages/InitialSetting';
 import MypageScreen from './pages/Mypage';
 import LocationScreen from './pages/Location';
 
-
-
+import Mainpage from './pages/Mainpage';
+import Main from './pages/Main';
 
 function MyPageScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button
-        title="메인페이지"
-        onPress={() =>
-          navigation.navigate('Mainpage')}
-      />
-    </View>
+    <Main/>
   );
 }
 

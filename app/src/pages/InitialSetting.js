@@ -1,14 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Pressable, StyleSheet, Dimensions } from 'react-native';
 import { WithLocalSvg } from 'react-native-svg';
 
 import SearchIcon from '../../assets/images/search.svg';
 import ConstitSettingButton from '../components/ConstitutionSettingButton';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useIsFocused } from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
 
 const InitialSettingScreen = ({ navigation }) => {
+  const [location, setLocation] = useState('');
+  const isFocused = useIsFocused();
+
+  const getLocationData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('location')
+      if (value !== null) {
+        setLocation(value);
+      }
+    } catch (e) {
+      alert('user location information fetch 실패');
+    }
+  };
+
+  useEffect(() => {
+    getLocationData();
+  }, [isFocused]);
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Initial Setting</Text>
@@ -33,7 +52,7 @@ const InitialSettingScreen = ({ navigation }) => {
         onPress={() => navigation.navigate('Location')}
         style={styles.info}
       >
-        <Text style={styles.infoText}>(location info)</Text>
+        <Text style={styles.infoText}>{location}</Text>
         <WithLocalSvg
           width={32}
           height={32}
@@ -46,6 +65,7 @@ const InitialSettingScreen = ({ navigation }) => {
         <Text style={styles.constitDescr}>sensitive to</Text>
         <ConstitSettingButton/>
       </View>
+      <Pressable onPress={()=>navigation.navigate('Mypage')}><Text>press</Text></Pressable>
     </View>
   );
 }
