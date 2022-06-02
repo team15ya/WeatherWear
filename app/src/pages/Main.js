@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, Dimensions, ImageBackground, Image, Button, TouchableOpacity } from "react-native";
 
 import DayList from '../components/MainDayList'
-import InfoButton from '../components/MainWeatherType'
 import InfoBox from '../components/MainWeatherInfo'
 
 import Mainpage from './Mainpage'
@@ -43,12 +42,7 @@ const Main = () => {
         <DayList />
       </View>
       <View style={{ flex: 4 }}>
-        <View style={{ flex: 1.3 }}>
-          <InfoButton />
-        </View>
-        <View style={{ flex: 4 }}>
-          <InfoBox />
-        </View>
+        <InfoBox />
       </View>
       <View style={{ flex: 9 }}>
         <Mainpage />
