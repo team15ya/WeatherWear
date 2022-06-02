@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView, Dimensions, ImageBackground, Image, Button } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Dimensions, ImageBackground, Image, Button, TouchableOpacity } from "react-native";
 
 import BoxEx from '../components/MainWeatherType';
 import Day from '../components/MainDayList'
@@ -7,12 +7,16 @@ import InfoButton from '../components/MainWeatherType'
 import InfoBox from '../components/MainWeatherInfo'
 
 import Mainpage from './Mainpage'
+import { useNavigation } from '@react-navigation/native';
 
 const Main = () => {
+  const navigation = useNavigation();
   return (
     <View style={{ flex: 1, backgroundColor: '#FFF8F4' }}>
       <View style={styles.headerContainer}>
-        <Image source={require("../../assets/images/mypage.png")} style={styles.icon} />
+        <TouchableOpacity style={styles.done} onPress={() => navigation.navigate('InitialSettings')}>
+          <Image source={require("../../assets/images/mypage.png")} style={styles.icon} />
+        </TouchableOpacity>
         <Text style={styles.header}>Location</Text>
         <Text>23:11</Text>
       </View>
@@ -41,14 +45,14 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   headerContainer: {
-    margin:15,
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'space-between'
+    margin: 15,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
   },
-  icon:{
-    height:30,
-    width:30
+  icon: {
+    height: 30,
+    width: 30
   }
 })
 
