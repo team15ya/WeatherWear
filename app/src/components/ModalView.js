@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity, Button, Linking } from "react-native";
 
-const Modal = () => {
+const ModalView = () => {
 
   return (
     <View style={styles.layout}>
-
       <View style={{ flexDirection: 'row' }}>
         <View style={styles.clothe}>
           <Text style={styles.title}>Hoody</Text>
@@ -92,4 +91,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Modal;
+export default ModalView;
