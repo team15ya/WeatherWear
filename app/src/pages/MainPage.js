@@ -23,7 +23,7 @@ export default function App(){
             </View>
           </View>
           <View style = {styles.reviewcontainer}>
-            <ClothNoReview/>
+            <Cloth/>
             <Cloth/>
           </View>
           <View style={styles.line}>
@@ -45,6 +45,7 @@ export default function App(){
         </ScrollView>
       </ImageBackground>
     </View>
+    <View style = {styles.last} />
   </View>;
 }
 
@@ -126,5 +127,9 @@ const styles = StyleSheet.create({
     width : '97%',
     flexDirection : 'row',
     marginTop : -20,
+  },
+  last : {
+    flex : 0.1,
+    backgroundColor : 'rgba(255,255,255,0)'
   }
 })
