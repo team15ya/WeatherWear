@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 
-
 let item1 = 2;
 let item2 = 6;
 let item3 = 1;
@@ -13,7 +12,7 @@ const Cloth = () => {
     return (
         <View style = {styles.clothContainer}>
             <View style = {styles.clothbox}>
-                <Image source = {require("/Users/maengsuyeon/Documents/react-native/WeatherWear/assets/jacket.png")} style = {styles.clothIcon}></Image>
+                <Image source = {require("../components/jacket.png")} style = {styles.clothIcon}></Image>
                 <Icon name="controller-volume" size={12} color="rgba(0,0,0,0.7)" style = {styles.button} />
             </View>
             <View style = {styles.clothNameBox}>
@@ -24,21 +23,21 @@ const Cloth = () => {
                     onPress={onPress}
                     style = {styles.reviewbox1}
                 >
-                    <Image source = {require("/Users/maengsuyeon/Documents/react-native/WeatherWear/assets/cold.png")} style ={styles.icon1}></Image>
+                    <Image source = {require("../components/cold.png")} style ={styles.icon1}></Image>
                     <Text style = {styles.reviewnum}>{item1}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
                     onPress={onPress}
                     style = {styles.reviewbox2}
                 >
-                    <Image source ={require("/Users/maengsuyeon/Documents/react-native/WeatherWear/assets/good.png")} style ={styles.icon1}></Image>
+                    <Image source ={require("../components/good.png")} style ={styles.icon1}></Image>
                     <Text style ={styles.reviewnum}>{item2}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity 
                     onPress={onPress}
                     style = {styles.reviewbox3}
                 >
-                    <Image source ={require("/Users/maengsuyeon/Documents/react-native/WeatherWear/assets/hot.png")} style ={styles.icon1}></Image>
+                    <Image source ={require("../components/hot.png")} style ={styles.icon1}></Image>
                     <Text style ={styles.reviewnum}>{item3}</Text>
                 </TouchableOpacity>
             </View>
