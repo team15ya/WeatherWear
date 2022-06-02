@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, Modal } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, Modal, Pressable, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 
 import ModalView from './ModalView';
@@ -8,6 +8,9 @@ let item1 = 2;
 let item2 = 6;
 let item3 = 1;
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const Cloth = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [count, setCount] = useState(0);
@@ -15,19 +18,18 @@ const Cloth = () => {
   return (
     <View style={styles.clothContainer}>
       <Modal
-        animationType="slide"
+        animationType="fade"
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
         }}
       >
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Pressable style={styles.modalBackground}
+          onPress={() => setModalVisible(false)}
+        />
+        <View style={styles.modalPosition}>
           <ModalView />
-          <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-            <Text>Close</Text>
-          </TouchableOpacity>
         </View>
       </Modal>
 
@@ -159,6 +161,17 @@ const styles = StyleSheet.create({
   },
   button: {
     marginLeft: 120
+  },
+  modalBackground: {
+    flex: 1,
+    backgroundColor: 'black',
+    opacity: 0.7
+  },
+  modalPosition: {
+    flex: 1,
+    top: windowWidth * 0.5,
+    left: windowWidth / 10,
+    position: 'absolute',
   }
 })
 

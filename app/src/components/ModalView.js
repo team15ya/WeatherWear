@@ -36,7 +36,7 @@ const ModalView = () => {
       </View>
       <View style={{paddingTop:20}}>
         <TouchableOpacity style={styles.button} onPress={() => { Linking.openURL('https://www.musinsa.com/search/musinsa/integration?type=&q=HOODy') }}>
-          <Text style={{ fontSize: 20, color: 'white' }}>Goto Musinsa</Text>
+          <Text style={{ fontSize: 20, color: 'white' }}>Go to musinsa</Text>
         </TouchableOpacity>
       </View>
 
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     paddingLeft:10,
     paddingRight:10,
     height:250,
-    width: "80%",
+    width: "90%",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     elevation: 4,
