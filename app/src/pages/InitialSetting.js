@@ -30,45 +30,43 @@ const InitialSettingScreen = ({ navigation }) => {
 
   return (
       <View style={styles.container}>
-        <Text style={styles.header}>Initial Setting</Text>
+          <Text style={styles.header}>Initial Setting</Text>
 
-        <Text style={styles.title}>ID</Text>
-        <Pressable
+          <Text style={styles.title}>ID</Text>
+          <Pressable
             onPress={() => {}}
             style={styles.info}
-        >
-          <Text style={styles.infoText}>ewha</Text>
-        </Pressable>
+          >
+              <Text style={styles.infoText}>ewha</Text>
+          </Pressable>
 
-        <Pressable
+          <Pressable
             onPress={() => {}}
             style={styles.logout}
-        >
-          <Text style={styles.logoutText}>LOGOUT</Text>
-        </Pressable>
+          >
+              <Text style={styles.logoutText}>LOGOUT</Text>
+          </Pressable>
 
-      <Text style={styles.title}>Location</Text>
-      <Pressable
-        onPress={() => navigation.navigate('Location')}
-        style={styles.info}
-      >
-        <Text style={styles.infoText}>{location}</Text>
-        <WithLocalSvg
-          width={32}
-          height={32}
-          asset={SearchIcon}
-        />
-      </Pressable>
+          <Text style={styles.title}>Location</Text>
+          <Pressable
+              onPress={() => navigation.navigate('Location')}
+              style={styles.info}
+          >
+              <Text style={styles.infoText}>{location}</Text>
+              <WithLocalSvg
+                  width={32}
+                  height={32}
+                  asset={SearchIcon}
+              />
+          </Pressable>
 
-        <Text style={styles.title}>Constitution</Text>
-        <View style={styles.constitContainer}>
-          <Text style={styles.constitDescr}>sensitive to</Text>
-          <ConstitSettingButton/>
-        </View>
-        <Pressable onPress={()=>navigation.navigate('Mypage')}><Text>press</Text></Pressable>
+          <Text style={styles.title}>Constitution</Text>
+          <View style={styles.constitContainer}>
+            <Text style={styles.constitDescr}>sensitive to</Text>
+            <ConstitSettingButton />
+          </View>
+          <Pressable onPress={()=>navigation.navigate('Mypage')}><Text>press</Text></Pressable>
       </View>
-      <Pressable onPress={()=>navigation.navigate('Mypage')}><Text>press</Text></Pressable>
-    </View>
   );
 }
 
