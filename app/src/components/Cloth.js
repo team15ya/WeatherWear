@@ -12,9 +12,13 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 const Cloth = () => {
+  
   const [modalVisible, setModalVisible] = useState(false);
-  const [count, setCount] = useState(0);
-  const onPress = () => setCount(prevCount => prevCount + 1);
+  const [clicked, SetClicked] = useState('false');
+  const onPressHandler = () => {
+      SetClicked(!clicked);
+  }
+
   return (
     <View style={styles.clothContainer}>
       <Modal
@@ -44,26 +48,41 @@ const Cloth = () => {
         <Text style={styles.clothName}>Jacket</Text>
       </View>
       <View style={styles.review}>
-        <TouchableOpacity
-          onPress={onPress}
-          style={styles.reviewbox1}
+        <TouchableOpacity 
+          style = {[
+              styles.reviewbox1, 
+              {backgroundColor: clicked ? 'rgba(255,255,255,0.7)' : '#45D2FF'
+          }]} 
+          onPress={onPressHandler}
         >
-          <Image source={require("../../assets/images/cold.png")} style={styles.icon1}></Image>
-          <Text style={styles.reviewnum}>{item1}</Text>
+          <Image source = {require("../../assets/images/cold.png")} style ={styles.icon1}></Image>
+          <Text style = {styles.reviewnum}>
+              {clicked ? '2' : '3'}
+          </Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={onPress}
-          style={styles.reviewbox2}
+        <TouchableOpacity 
+          style = {[
+              styles.reviewbox2, 
+              {backgroundColor: clicked ? 'rgba(255,255,255,0.7)' : '#45D2FF'
+          }]} 
+          onPress={onPressHandler}
         >
-          <Image source={require("../../assets/images/good.png")} style={styles.icon1}></Image>
-          <Text style={styles.reviewnum}>{item2}</Text>
+          <Image source = {require("../../assets/images/good.png")} style ={styles.icon1}></Image>
+          <Text style = {styles.reviewnum}>
+              {clicked ? '6' : '7'}
+          </Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={onPress}
-          style={styles.reviewbox3}
+        <TouchableOpacity 
+          style = {[
+              styles.reviewbox3, 
+              {backgroundColor: clicked ? 'rgba(255,255,255,0.7)' : '#45D2FF'
+          }]} 
+          onPress={onPressHandler}
         >
-          <Image source={require("../../assets/images/hot.png")} style={styles.icon1}></Image>
-          <Text style={styles.reviewnum}>{item3}</Text>
+          <Image source = {require("../../assets/images/hot.png")} style ={styles.icon1}></Image>
+          <Text style = {styles.reviewnum}>
+              {clicked ? '1' : '2'}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
