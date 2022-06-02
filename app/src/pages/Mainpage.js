@@ -2,20 +2,20 @@ import React from "react";
 import { View, Text, StyleSheet, ScrollView, Dimensions, ImageBackground , Image} from "react-native";
 import Cloth from '../components/Cloth';
 import ClothNoReview from "../components/ClothNoReview";
+import ConstitutionSettingButton from '../components/ConstitutionSettingButton';
 
 export default function App(){
   return <View style = {styles.container}>
-    <View style = {styles.city}>
-      <Text>여기에 날씨 정보 component 추가</Text>
-    </View>
+    <View></View>
     <View style = {styles.sensitiveTo}>
       <Text>Sensitive to</Text>
+      <ConstitutionSettingButton/>
     </View>
     <View style = {styles.howbox}>
       <Text style = {styles.how}>How about these?</Text>
     </View>
     <View style = {styles.recommend}>
-      <ImageBackground source = {require("../../assets/images/sky.png")} style={styles.bgImage}>
+      <ImageBackground source = {require("../../assets/images/afternoon.png")} style={styles.bgImage}>
         <ScrollView contentContainerStyle = {styles.box}>
           <View style={styles.line}>
             <View style = {styles.categorybox}>

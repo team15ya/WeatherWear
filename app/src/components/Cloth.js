@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         flex : 3,
         flexDirection : 'row',
         width : "48.5%",
-        backgroundColor : "teal"
+        height:50
       },
       reviewbox1 :{
         backgroundColor : 'rgba(255,255,255,0.7)',
