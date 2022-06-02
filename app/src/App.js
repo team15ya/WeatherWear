@@ -12,46 +12,40 @@ import InitialSettingScreen from './pages/InitialSetting';
 import MypageScreen from './pages/Mypage';
 import LocationScreen from './pages/Location';
 
-
-
+import Mainpage from './pages/MainPage'
+import Main from "./pages/Main";
 
 function MyPageScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button
-        title="메인페이지"
-        onPress={() =>
-          navigation.navigate('Mainpage')}
-      />
-    </View>
+    <Main/>
   );
 }
 
 
 function MainpageScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, backgroundColor: '#FFF8F4' }}>
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
-        <Day /><Day /><Day /><Day /><Day /><Day /><Day />
-      </View>
-      <View style={{ flex: 4 }}>
-        <View style={{ flex: 1.3 }}>
-          <InfoButton />
-        </View>
-        <View style={{ flex: 4 }}>
-          <InfoBox />
-        </View>
+    return (
+        <View style={{ flex: 1, backgroundColor: '#FFF8F4' }}>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
+                <Day /><Day /><Day /><Day /><Day /><Day /><Day />
+            </View>
+            <View style={{ flex: 4 }}>
+                <View style={{ flex: 1.3 }}>
+                    <InfoButton />
+                </View>
+                <View style={{ flex: 4 }}>
+                    <InfoBox />
+                </View>
 
-      </View>
-      <View style={{ flex: 9, alignItems: 'center', justifyContent: 'center' }}>
-        <Button
-          title="마이페이지(임시)"
-          onPress={() =>
-            navigation.navigate('Mypage')}
-        />
-      </View>
-    </View>
-  );
+            </View>
+            <View style={{ flex: 9, alignItems: 'center', justifyContent: 'center' }}>
+                <Button
+                    title="마이페이지(임시)"
+                    onPress={() =>
+                        navigation.navigate('Mypage')}
+                />
+            </View>
+        </View>
+    );
 }
 
 
