@@ -1,8 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView, Dimensions, ImageBackground , Image} from "react-native";
-import { Fontisto } from "@expo/vector-icons";
-import Cloth from './components/Cloth.js';
-import ClothNoReview from "./components/ClothNoReview.js";
+import Cloth from '../components/Cloth';
+import ClothNoReview from "../components/ClothNoReview";
 
 export default function App(){
   return <View style = {styles.container}>
@@ -16,7 +15,7 @@ export default function App(){
       <Text style = {styles.how}>How about these?</Text>
     </View>
     <View style = {styles.recommend}>
-      <ImageBackground source = {require("/Users/maengsuyeon/Documents/react-native/WeatherWear/assets/sky.png")} style={styles.bgImage}>
+      <ImageBackground source = {require("../../assets/images/sky.png")} style={styles.bgImage}>
         <ScrollView contentContainerStyle = {styles.box}>
           <View style={styles.line}>
             <View style = {styles.categorybox}>

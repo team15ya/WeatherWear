@@ -13,7 +13,7 @@ const ClothNoReview = () => {
     return (
         <View style = {styles.clothContainer}>
             <View style = {styles.clothbox}>
-                <Image source = {require("/Users/maengsuyeon/Documents/react-native/WeatherWear/assets/jacket.png")} style = {styles.clothIcon}></Image>
+                <Image source = {require("../../assets/images/jacket.png")} style = {styles.clothIcon}></Image>
                 <Icon name="controller-volume" size={12} color="rgba(0,0,0,0.7)" style = {styles.button} />
             </View>
             <View style = {styles.clothNameBox}>
