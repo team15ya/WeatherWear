@@ -21,7 +21,7 @@ export default function MainWeatherInfo(){
                 <Button style={bytimestyle} onPress={() => {setBytimeStyle(styles.typeselected); setGeneralStyle(styles.type); setGeneralVisible(false); setBytimeVisible(true);}}>
                     <Text style={{color:"white"}}>BY TIME</Text>
                 </Button>
-            </Box>;
+            </Box>
             <ImageBackground source={require('app/assets/images/evening.png')}
                              alignSelf="center"
                              style = {styles.imagebg}
