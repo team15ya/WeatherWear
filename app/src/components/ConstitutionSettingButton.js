@@ -9,6 +9,19 @@ import DownIcon from '../../assets/images/down.svg';
 export default function ConstitSettingButton(){
 
     const [modalVisible, setModalVisible] = useState(false);
+    const [constitution, setConstitution] = useState('NONE');
+
+    const getConstitutionData = async () => {
+        try {
+            const value = await AsyncStorage.getItem('constitution');
+            if (value !== null) {
+                setConstitution(value);
+                console.log('User constitution is : ' + value );
+            }
+        } catch (e) {
+            console.log('User constitution data 불러오기 실패')
+        }
+    };
 
     return (
         <View>
@@ -16,7 +29,7 @@ export default function ConstitSettingButton(){
                 onPress={()=>setModalVisible(true)}
                 style={styles.dropdown_default}
             >
-                <Text style={styles.dropdown_text}>NONE</Text>
+                <Text style={styles.dropdown_text}>{constitution}</Text>
                 <WithLocalSvg
                     width={16}
                     height={16}
@@ -26,7 +39,7 @@ export default function ConstitSettingButton(){
   
             <ConstitModal 
                 visible={modalVisible} 
-                onClose={() => [setModalVisible(false)]}
+                onClose={() => [setModalVisible(false), , getConstitutionData()]}
             />
         </View>
     );
