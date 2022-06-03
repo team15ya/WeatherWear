@@ -41,7 +41,7 @@ const Main = () => {
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
         <DayList />
       </View>
-      <View style={{ flex: 4 }}>
+      <View style={{ flex: 5 }}>
         <InfoBox />
       </View>
       <View style={{ flex: 9 }}>

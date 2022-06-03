@@ -24,6 +24,7 @@ export default function MainWeatherInfo(){
             </Box>
             <ImageBackground source={require('app/assets/images/evening.png')}
                              alignSelf="center"
+                             imageStyle={{borderBottomLeftRadius:20, borderBottomRightRadius:20}}
                              style = {styles.imagebg}
                              resizeMode="cover">
                     <View>
@@ -195,6 +196,8 @@ const styles = StyleSheet.create({
         width : width*2130,
         height : height*230,
         marginLeft: width*20,
+        justifyContent:'center',
+        alignItems:'center',
     }
 
 
