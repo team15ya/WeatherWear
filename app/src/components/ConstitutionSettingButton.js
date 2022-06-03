@@ -1,21 +1,41 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Modal, Pressable } from 'react-native';
 import { WithLocalSvg } from 'react-native-svg';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import DownIcon from '../../assets/images/down.svg';
+import { useIsFocused } from '@react-navigation/native';
 
 
 export default function ConstitSettingButton(){
 
     const [modalVisible, setModalVisible] = useState(false);
-  
+    const [constitution, setConstitution] = useState('NONE');
+    const isFocused = useIsFocused();
+
+    const getConstitutionData = async () => {
+        try {
+            const value = await AsyncStorage.getItem('constitution');
+            if (value !== null) {
+                setConstitution(value);
+                console.log('User constitution is : ' + value );
+            }
+        } catch (e) {
+            console.log('User constitution data 불러오기 실패')
+        }
+    };
+
+    useEffect(() => {
+        getConstitutionData();
+    }, [isFocused]);
+
     return (
         <View>
             <Pressable
                 onPress={()=>setModalVisible(true)}
                 style={styles.dropdown_default}
             >
-                <Text style={styles.dropdown_text}>NONE</Text>
+                <Text style={styles.dropdown_text}>{constitution}</Text>
                 <WithLocalSvg
                     width={16}
                     height={16}
@@ -25,13 +45,22 @@ export default function ConstitSettingButton(){
   
             <ConstitModal 
                 visible={modalVisible} 
-                onClose={() => setModalVisible(false)}
+                onClose={() => [setModalVisible(false), , getConstitutionData()]}
             />
         </View>
     );
   }
 
 const ConstitModal = ({visible, onClose}) => {
+  
+    const setConstitutionData = async (value) => {
+        try {
+            await AsyncStorage.setItem('constitution', value)
+            console.log('User constitution set to "' + value + '"')
+        } catch (e) {
+            console.log('User constitution data 저장 오류')
+        }
+    };
 
     return (
         <Modal
@@ -39,28 +68,29 @@ const ConstitModal = ({visible, onClose}) => {
             animationType='none'
             transparent={true}
         >
-            <View 
+            <Pressable 
                 style={styles.modalView}
+                onPress={() => onClose()}
             >
                 <Pressable
                     style={[styles.dropdown_default, styles.dropdown_modal_top]}
-                    onPress={()=>[onClose()]}
+                    onPress={()=>[setConstitutionData('NONE'), onClose()]}
                 >
                     <Text style={styles.dropdown_text}>NONE</Text>
                 </Pressable>
                 <Pressable
                     style={[styles.dropdown_default, styles.dropdown_modal_mid]}
-                    onPress={()=>[onClose()]}
+                    onPress={()=>[setConstitutionData('HOT'), onClose()]}
                 >
                     <Text style={styles.dropdown_text}>HOT</Text>
                 </Pressable>
                 <Pressable
                     style={[styles.dropdown_default, styles.dropdown_modal_bottom]}
-                    onPress={()=>[onClose()]}
+                    onPress={()=>[setConstitutionData('COLD'), onClose()]}
                 >
                     <Text style={styles.dropdown_text}>COLD</Text>
                 </Pressable>
-            </View>
+            </Pressable>
         </Modal>
     );
 }
@@ -75,24 +105,21 @@ const styles = StyleSheet.create({
         width: 100,
         height: 30,
         alignItems: 'center',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         marginLeft: 10,
+        paddingRight: 18,
     },
     dropdown_text: {
         fontSize: 13,
         fontWeight: '500',
         color: '#5F5F5F',
-        marginLeft: 23,
-        marginRight: 5,
+        paddingLeft: 23,
     },
     modalView: {
         flex: 1,
-        alignItems: "center",
-        alignSelf: 'flex-start',
-        width: 100,
-        height: 30,
-        marginTop: 364,
-        marginLeft: 126.5,
+        paddingTop: 394,
+        paddingLeft: 121,
+        backgroundColor: '#00000022',
     },
     dropdown_modal_top: {
         borderRadius: 15,
