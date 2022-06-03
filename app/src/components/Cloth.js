@@ -12,11 +12,19 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 const Cloth = () => {
-  
+
   const [modalVisible, setModalVisible] = useState(false);
-  const [clicked, SetClicked] = useState('false');
-  const onPressHandler = () => {
-      SetClicked(!clicked);
+  const [clicked1, SetClicked1] = useState(false);
+  const [clicked2, SetClicked2] = useState(false);
+  const [clicked3, SetClicked3] = useState(false);
+  const onPressHandler1 = () => {
+      SetClicked1(!clicked1);
+  }
+  const onPressHandler2 = () => {
+      SetClicked2(!clicked2);
+  }
+  const onPressHandler3 = () => {
+      SetClicked3(!clicked3);
   }
 
   return (
@@ -51,37 +59,37 @@ const Cloth = () => {
         <TouchableOpacity 
           style = {[
               styles.reviewbox1, 
-              {backgroundColor: clicked ? 'rgba(255,255,255,0.7)' : '#45D2FF'
+              {backgroundColor: clicked1 ? '#45D2FF' : 'rgba(255,255,255,0.7)'
           }]} 
-          onPress={onPressHandler}
+          onPress={onPressHandler1}
         >
           <Image source = {require("../../assets/images/cold.png")} style ={styles.icon1}></Image>
           <Text style = {styles.reviewnum}>
-              {clicked ? '2' : '3'}
+              {clicked1 ? '3' : '2'}
           </Text>
         </TouchableOpacity>
         <TouchableOpacity 
           style = {[
               styles.reviewbox2, 
-              {backgroundColor: clicked ? 'rgba(255,255,255,0.7)' : '#45D2FF'
+              {backgroundColor: clicked2 ? '#45D2FF' : 'rgba(255,255,255,0.7)'
           }]} 
-          onPress={onPressHandler}
+          onPress={onPressHandler2}
         >
           <Image source = {require("../../assets/images/good.png")} style ={styles.icon1}></Image>
           <Text style = {styles.reviewnum}>
-              {clicked ? '6' : '7'}
+              {clicked2 ? '7' : '6'}
           </Text>
         </TouchableOpacity>
         <TouchableOpacity 
           style = {[
               styles.reviewbox3, 
-              {backgroundColor: clicked ? 'rgba(255,255,255,0.7)' : '#45D2FF'
+              {backgroundColor: clicked3 ? '#45D2FF' : 'rgba(255,255,255,0.7)'
           }]} 
-          onPress={onPressHandler}
+          onPress={onPressHandler3}
         >
           <Image source = {require("../../assets/images/hot.png")} style ={styles.icon1}></Image>
           <Text style = {styles.reviewnum}>
-              {clicked ? '1' : '2'}
+              {clicked3 ? '2' : '1'}
           </Text>
         </TouchableOpacity>
       </View>
