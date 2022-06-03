@@ -21,9 +21,10 @@ export default function MainWeatherInfo(){
                 <Button style={bytimestyle} onPress={() => {setBytimeStyle(styles.typeselected); setGeneralStyle(styles.type); setGeneralVisible(false); setBytimeVisible(true);}}>
                     <Text style={{color:"white"}}>BY TIME</Text>
                 </Button>
-            </Box>;
+            </Box>
             <ImageBackground source={require('app/assets/images/evening.png')}
                              alignSelf="center"
+                             imageStyle={{borderBottomLeftRadius:20, borderBottomRightRadius:20}}
                              style = {styles.imagebg}
                              resizeMode="cover">
                     <View>
@@ -170,13 +171,19 @@ const styles = StyleSheet.create({
     },
     typeselected:{
         backgroundColor: '#707B90',
-        borderRadius: 5,
+        borderTopRightRadius:5,
+        borderTopLeftRadius:5,    
+        borderBottomRightRadius:0,
+        borderBottomLeftRadius:0,
         width: width*1050,
         height: height*53
     },
     type:{
         backgroundColor: '#CAB0AE',
-        borderRadius: 5,
+        borderTopRightRadius:5,
+        borderTopLeftRadius:5,
+        borderBottomRightRadius:0,
+        borderBottomLeftRadius:0,
         width: width*1050,
         height: height*53
     },
@@ -189,6 +196,8 @@ const styles = StyleSheet.create({
         width : width*2130,
         height : height*230,
         marginLeft: width*20,
+        justifyContent:'center',
+        alignItems:'center',
     }
 
 
