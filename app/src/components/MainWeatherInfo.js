@@ -170,13 +170,19 @@ const styles = StyleSheet.create({
     },
     typeselected:{
         backgroundColor: '#707B90',
-        borderRadius: 5,
+        borderTopRightRadius:5,
+        borderTopLeftRadius:5,    
+        borderBottomRightRadius:0,
+        borderBottomLeftRadius:0,
         width: width*1050,
         height: height*53
     },
     type:{
         backgroundColor: '#CAB0AE',
-        borderRadius: 5,
+        borderTopRightRadius:5,
+        borderTopLeftRadius:5,
+        borderBottomRightRadius:0,
+        borderBottomLeftRadius:0,
         width: width*1050,
         height: height*53
     },
