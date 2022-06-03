@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Modal, Pressable } from 'react-native';
 import { WithLocalSvg } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import DownIcon from '../../assets/images/down.svg';
+import { useIsFocused } from '@react-navigation/native';
 
 
 export default function ConstitSettingButton(){
 
     const [modalVisible, setModalVisible] = useState(false);
     const [constitution, setConstitution] = useState('NONE');
+    const isFocused = useIsFocused();
 
     const getConstitutionData = async () => {
         try {
@@ -22,6 +24,10 @@ export default function ConstitSettingButton(){
             console.log('User constitution data 불러오기 실패')
         }
     };
+
+    useEffect(() => {
+        getConstitutionData();
+    }, [isFocused]);
 
     return (
         <View>
@@ -99,15 +105,15 @@ const styles = StyleSheet.create({
         width: 100,
         height: 30,
         alignItems: 'center',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         marginLeft: 10,
+        paddingRight: 18,
     },
     dropdown_text: {
         fontSize: 13,
         fontWeight: '500',
         color: '#5F5F5F',
-        marginLeft: 23,
-        marginRight: 5,
+        paddingLeft: 23,
     },
     modalView: {
         flex: 1,
