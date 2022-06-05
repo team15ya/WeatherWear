@@ -2,14 +2,14 @@ import React from "react";
 import { View, Text, StyleSheet, ScrollView, Dimensions, ImageBackground , Image} from "react-native";
 import Cloth from '../components/Cloth';
 import ClothNoReview from "../components/ClothNoReview";
-import ConstitutionSettingButton from '../components/ConstitutionSettingButton';
+import MainConstitutionSettingButton from '../components/MainConstitutionSettingButton';
 
 export default function App(){
   return <View style = {styles.container}>
     <View></View>
     <View style = {styles.sensitiveTo}>
       <Text>Sensitive to</Text>
-      <ConstitutionSettingButton/>
+      <MainConstitutionSettingButton/>
     </View>
     <View style = {styles.howbox}>
       <Text style = {styles.how}>How about these?</Text>
