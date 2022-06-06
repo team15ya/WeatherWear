@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, Dimensions, ImageBackground, Image, Button, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 import DayList from '../components/MainDayList'
 import InfoBox from '../components/MainWeatherInfo'
 
-import Mainpage from './Mainpage'
+import MainRecommendSection from '../components/MainRecommendSection'
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useIsFocused } from '@react-navigation/native';
@@ -32,7 +32,7 @@ const Main = () => {
   return (
     <View style={{ flex: 1, backgroundColor: '#FFF8F4' }}>
       <View style={styles.headerContainer}>
-        <TouchableOpacity style={styles.done} onPress={() => navigation.navigate('InitialSettings')}>
+        <TouchableOpacity style={styles.done} onPress={() => navigation.navigate('Mypage')}>
           <Image source={require("../../assets/images/mypage.png")} style={styles.icon} />
         </TouchableOpacity>
         <Text style={styles.header}>{location}</Text>
@@ -45,7 +45,7 @@ const Main = () => {
         <InfoBox />
       </View>
       <View style={{ flex: 9 }}>
-        <Mainpage />
+        <MainRecommendSection />
       </View>
     </View>
   );

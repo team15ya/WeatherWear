@@ -68,7 +68,7 @@ const InitialSettingScreen = ({ navigation }) => {
           </View>
           <Pressable
             style={styles.doneButton}
-            onPress={()=>navigation.navigate('Mypage')}
+            onPress={() => navigation.navigate('Mainpage')}
           >
             <Text style={styles.doneButtonText}>DONE</Text>
           </Pressable>
