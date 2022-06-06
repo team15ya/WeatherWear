@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from "react-native";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, Dimensions } from "react-native";
 import Map from '../components/Map';
 
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const Searchbar = () => {
   const [search, setSearch] = useState('');
@@ -33,9 +37,9 @@ const Searchbar = () => {
           </TouchableOpacity>
         </View>
       <Map location={mapSearch} />
-      <TouchableOpacity style={styles.done}
+      <TouchableOpacity style={styles.doneButton}
         onPress={() => setLocationData(mapSearch)}>
-        <Text style={{ color: 'white', fontSize: 18 }}>DONE</Text>
+        <Text style={styles.doneButtonText}>DONE</Text>
       </TouchableOpacity>
     </View>
   );
@@ -55,14 +59,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between'
   },
-  done: {
-    backgroundColor: 'grey',
-    marginTop: 20,
-    width: "60%",
-    height: "7%",
+  doneButton: {
+    position: 'absolute',
+    marginTop: windowHeight-170,
+    alignSelf: 'center',
+    width: windowWidth-138,
+    height: 41,
     borderRadius: 20,
+    backgroundColor: 'grey',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+  },
+  doneButtonText: {
+    fontSize: 18,
+    color: 'white', 
   }
 });
 

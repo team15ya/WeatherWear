@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { ScrollView, View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 import DayList from '../components/MainDayList'
 import InfoBox from '../components/MainWeatherInfo'
@@ -30,7 +30,7 @@ const Main = () => {
 
   const navigation = useNavigation();
   return (
-    <View style={{ flex: 1, backgroundColor: '#FFF8F4' }}>
+    <ScrollView style={{ flex: 1, backgroundColor: '#FFF8F4' }}>
       <View style={styles.headerContainer}>
         <TouchableOpacity style={styles.done} onPress={() => navigation.navigate('Mypage')}>
           <Image source={require("../../assets/images/mypage.png")} style={styles.icon} />
@@ -38,16 +38,12 @@ const Main = () => {
         <Text style={styles.header}>{location}</Text>
         <Text>23:11</Text>
       </View>
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
-        <DayList />
-      </View>
-      <View style={{ flex: 5 }}>
-        <InfoBox />
-      </View>
-      <View style={{ flex: 9 }}>
-        <MainRecommendSection />
-      </View>
-    </View>
+
+      <DayList />
+      <InfoBox />
+      <MainRecommendSection />
+      
+    </ScrollView>
   );
 };
 
@@ -61,7 +57,7 @@ const styles = StyleSheet.create({
     margin: 15,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   icon: {
     height: 30,
