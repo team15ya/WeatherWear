@@ -23,7 +23,7 @@ export default function App(){
             </View>
           </View>
           <View style = {styles.reviewcontainer}>
-            <ClothNoReview/>
+            <Cloth/>
             <Cloth/>
           </View>
           <View style={styles.line}>
