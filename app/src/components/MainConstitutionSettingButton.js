@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Modal, Pressable } from 'react-native';
+import { View, Text, StyleSheet, Modal, Pressable, Dimensions } from 'react-native';
 import { WithLocalSvg } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import DownIcon from '../../assets/images/down.svg';
 import { useIsFocused } from '@react-navigation/native';
 
+
+const windowWidth = Dimensions.get('window').width;
 
 export default function MainConstitSettingButton(){
 
@@ -30,10 +32,11 @@ export default function MainConstitSettingButton(){
     }, [isFocused]);
 
     return (
-        <View>
+        <View style={styles.buttonContainer}>
+            <Text style={{paddingBottom:5}}>sensitive to</Text>
             <Pressable
                 onPress={()=>setModalVisible(true)}
-                style={styles.dropdown_default}
+                style={[styles.dropdown_default,styles.dropdown_modal_top, {borderBottomWidth:0}]}
             >
                 <Text style={styles.dropdown_text}>{constitution}</Text>
                 <WithLocalSvg
@@ -72,54 +75,63 @@ const ConstitModal = ({visible, onClose}) => {
                 style={styles.modalView}
                 onPress={() => onClose()}
             >
-                <Pressable
-                    style={[styles.dropdown_default, styles.dropdown_modal_top]}
-                    onPress={()=>[setConstitutionData('NONE'), onClose()]}
-                >
-                    <Text style={styles.dropdown_text}>NONE</Text>
-                </Pressable>
-                <Pressable
-                    style={[styles.dropdown_default, styles.dropdown_modal_mid]}
-                    onPress={()=>[setConstitutionData('HOT'), onClose()]}
-                >
-                    <Text style={styles.dropdown_text}>HOT</Text>
-                </Pressable>
-                <Pressable
-                    style={[styles.dropdown_default, styles.dropdown_modal_bottom]}
-                    onPress={()=>[setConstitutionData('COLD'), onClose()]}
-                >
-                    <Text style={styles.dropdown_text}>COLD</Text>
-                </Pressable>
+                <View style={styles.modalButtonContainer}>
+                    <Pressable
+                        style={[styles.dropdown_default, styles.dropdown_modal_top]}
+                        onPress={()=>[setConstitutionData('NONE'), onClose()]}
+                    >
+                        <Text style={styles.dropdown_text}>NONE</Text>
+                    </Pressable>
+                    <Pressable
+                        style={[styles.dropdown_default, styles.dropdown_modal_mid]}
+                        onPress={()=>[setConstitutionData('HOT'), onClose()]}
+                    >
+                        <Text style={styles.dropdown_text}>HOT</Text>
+                    </Pressable>
+                    <Pressable
+                        style={[styles.dropdown_default, styles.dropdown_modal_bottom]}
+                        onPress={()=>[setConstitutionData('COLD'), onClose()]}
+                    >
+                        <Text style={styles.dropdown_text}>COLD</Text>
+                    </Pressable>
+                </View>
             </Pressable>
         </Modal>
     );
 }
 
 const styles = StyleSheet.create({
+    buttonContainer: {
+        width: windowWidth*0.35,
+        alignItems: 'center',
+        alignSelf: 'flex-end',
+    },
     dropdown_default: {
         flexDirection: 'row',
         backgroundColor: 'white',
         borderWidth: 1,
         borderRadius: 45,
         borderColor: '#A3A3A3',
-        width: 100,
-        height: 30,
+        width: windowWidth*0.35,
+        height: 28,
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginLeft: 10,
-        paddingRight: 18,
+        paddingRight: 38,
     },
     dropdown_text: {
         fontSize: 13,
         fontWeight: '500',
         color: '#5F5F5F',
-        paddingLeft: 23,
+        paddingLeft: 43,
     },
     modalView: {
         flex: 1,
-        paddingTop: 394,
-        paddingLeft: 121,
         backgroundColor: '#00000022',
+    },
+    modalButtonContainer: {
+        alignSelf: 'flex-end',
+        paddingTop: 349,
+        paddingRight: 7,
     },
     dropdown_modal_top: {
         borderRadius: 15,
