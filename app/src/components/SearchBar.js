@@ -14,7 +14,7 @@ const Searchbar = () => {
   async function setLocationData(value) {
     try {
       await AsyncStorage.setItem('location', value)
-      navigation.navigate('InitialSettings')
+      navigation.goBack()
     } catch (e) {
       console.log('user location 정보 저장 오류')
     }
