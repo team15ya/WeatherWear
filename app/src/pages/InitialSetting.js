@@ -8,6 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useIsFocused } from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const InitialSettingScreen = ({ navigation }) => {
   const [location, setLocation] = useState('');
@@ -65,7 +66,12 @@ const InitialSettingScreen = ({ navigation }) => {
             <Text style={styles.constitDescr}>sensitive to</Text>
             <ConstitSettingButton />
           </View>
-          <Pressable onPress={()=>navigation.navigate('Mypage')}><Text>press</Text></Pressable>
+          <Pressable
+            style={styles.doneButton}
+            onPress={()=>navigation.navigate('Mypage')}
+          >
+            <Text style={styles.doneButtonText}>DONE</Text>
+          </Pressable>
       </View>
   );
 }
@@ -136,6 +142,21 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#7F7F7F',
   },
+  doneButton: {
+    position: 'absolute',
+    marginTop: windowHeight-100,
+    alignSelf: 'center',
+    width: windowWidth-138,
+    height: 41,
+    borderRadius: 20,
+    backgroundColor: 'grey',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  doneButtonText: {
+    fontSize: 18,
+    color: 'white', 
+  }
 });
 
 export default InitialSettingScreen;
