@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView, Dimensions, ImageBackground , Image} from "react-native";
-import Cloth from '../components/Cloth';
+import ClothNoReview from "../components/ClothNoReview";
 import MainConstitutionSettingButton from '../components/MainConstitutionSettingButton';
 
 export default function App(){
@@ -22,8 +22,8 @@ export default function App(){
             </View>
           </View>
           <View style = {styles.reviewcontainer}>
-            <Cloth/>
-            <Cloth/>
+            <ClothNoReview/>
+            <ClothNoReview/>
           </View>
           <View style={styles.line}>
             <View style = {styles.categorybox}>
@@ -31,7 +31,7 @@ export default function App(){
             </View>
           </View>
           <View style = {styles.reviewcontainer}>
-            <Cloth/>
+            <ClothNoReview/>
           </View>
           <View style={styles.line}>
             <View style = {styles.categorybox}>
@@ -39,7 +39,7 @@ export default function App(){
             </View>
           </View>
           <View style = {styles.reviewcontainer}>
-            <Cloth />
+            <ClothNoReview/>
           </View>
         </ImageBackground>
       </View>
