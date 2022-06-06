@@ -8,6 +8,7 @@ import MainRecommendSection from '../components/MainRecommendSection'
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useIsFocused } from '@react-navigation/native';
+import MainWeatherInfo from "../components/MainWeatherInfo";
 
 const Main = () => {
   const [location, setLocation] = useState('');
@@ -40,9 +41,7 @@ const Main = () => {
       </View>
 
       <DayList />
-      <InfoBox />
-      <MainRecommendSection />
-      
+      <MainWeatherInfo />
     </ScrollView>
   );
 };
