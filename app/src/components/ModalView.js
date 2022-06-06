@@ -8,8 +8,8 @@ const ModalView = () => {
       <View style={{ flexDirection: 'row', alignItems:'flex-end'}}>
         <View style={styles.clothe}>
           <Image
-            style={{ height: 160, width: 200, resizeMode: 'contain' }}
-            source={require('../../assets/images/jacket_modal.png')} />
+            style={{ height: 140, width: 200, resizeMode: 'contain' }}
+            source={require('../../assets/images/jacketNoBg.png')} />
         </View>
 
 
