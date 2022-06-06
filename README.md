@@ -1,56 +1,60 @@
-# Weatherwear
-# Overview
 
-*Link to prototype :* [https://www.figma.com/proto/qpBAGGziQ3QVWltvsZbieB/%EC%9D%B8%EC%BB%B4%EC%83%81-medium-fi?node-id=43%3A1326&scaling=scale-down&page-id=0%3A1&starting-point-node-id=43%3A1326](https://www.figma.com/proto/qpBAGGziQ3QVWltvsZbieB/%EC%9D%B8%EC%BB%B4%EC%83%81-medium-fi?node-id=43%3A1326&scaling=scale-down&page-id=0%3A1&starting-point-node-id=43%3A1326)
+<div align="center" id="top">     
+  <!-- <a href="https://weatherwear.netlify.app">Demo</a> -->  
+</div>  
+<h1 align="center">WeatherWear</h1>    
 
-The prototype we created for Weatherwear was built and runs on Figma.
 
-## Tools we’ve used
+> Get your wear for the weather, whoever, whenever! At Weatherwear, you will be recommended the most appropriate outfit for each time, and  able to look at other users' responses.
 
-### Figma (Final Selection)
 
-Figma is suitable tool for building taskflows and has a variety of icon samples. But it has limited animation effect for prototypes, and requires a lot of manual work.
 
-# Instruction for Prototype
 
-## How to use
+## :rocket: Author ##  
 
-### Context
+|      Gyeonmin Kim      |        Suyeon Maeng        |          Yujin Seol          |         Jungeun Kim        |
+|:----------------------:|:--------------------------:|:----------------------------:|:--------------------------:|
+|                        |                            |                              |                            |
+| Mypage Initial Setting | Mainpage's cloth component | Mainpage's weather-component | Location page Modal Design |
 
-**Task 1 : Get information about clothes that they can wear on weather of the day**
 
-1)  User get current weather and temperature, highest/lowest daily temperature, wind speed, and precipitation probability information from the [General] element at the top of main screen.
+## :sparkles: Features ##  
 
-2) User receives outer, top, bottoms recommendations corresponding to the current weather from the [How about these] element.
+- Recommendation of User's outfit
+- Redirection to purchaseable link
+- Review, and share responses
 
-3) By selecting [sensitive to] element, user receives different clothing recommendations for the same weather depending on her constitution.
+## :rocket: Technologies ##  
 
-**Task 2 : Get information on clothes that can be worn in the weather at the desired time**
+The following tools were used in this project:
 
-1) User get weather, temperature, and precipitation probability information for several time range by selecting [By time] element at the top of main screen.
+- [Expo](https://expo.io/)
+- [Node.js](https://nodejs.org/en/)
+- [React](https://pt-br.reactjs.org/)
+- [React Native](https://reactnative.dev/)
+- [Javascript](https://developer.mozilla.org/en/JavaScript)
 
-2) From the [How about these] element, outer, top, and bottoms are recommended for each time zone’s weather.
+## :white_check_mark: Requirements ##  
 
-**Task 3 : View other user’s reactions to the clothes and access the shopping mall site where they can buy the clothes**
+Before starting, you need to have Git, Node, React-native, and yarn installed.
 
-1)  User can check the list of clothes recommended for the current weather and check the reaction of other users.
+## :checkered_flag: Starting ##  
 
-2) User can express her preference for recommended clothes by clicking the icons representing cold, thumbs up, and hot.
+```bash  
+# Clone this project  
+$ git clone https://github.com/team15ya/WeatherWear.git  
+  
+# Access  
+$ cd weatherwear && cd app  
+  
+# Install dependencies  
+$ yarn  
+  
+# Run the project  
+$ yarn react-native run-android  
+  
+# The server will initialize in the <http://localhost:8081>  
+```  
 
-3) By clicking the recommended clothing element, user can get button to move to the external shopping mall site.
 
-4) User enjoys shopping the clothes of desired category on the external shopping mall site.
-
-**Other Non-task related functionality :**
-
-1) Background images of elements change according to time zones (day, evening, night). The user can intuitively recognize the current time zone by background images.
-
-### Wizard-of-oz & hard-coded features
-
-We didn’t used wizard-of-oz technique. However, we used hard-coded features such as mock users, weather information, location, date/time information, and review data.
-
-### Limitations & Tradeoffs
-
-Due to Figma limitations, Some user gestures are simplified, features related to back-end support are not shown.
-
-And we left out less commonly used screens prototype and similar tasks, as we considered simplifying taskflow is more important. We only displayed representative tasks.
+<a href="#top">Back to top</a>
