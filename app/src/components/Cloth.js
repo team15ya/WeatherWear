@@ -191,8 +191,8 @@ const styles = StyleSheet.create({
   },
   modalBackground: {
     flex: 1,
-    backgroundColor: 'black',
-    opacity: 0.7
+    backgroundColor: 'white',
+    opacity: 0.4
   },
   modalPosition: {
     flex: 1,
