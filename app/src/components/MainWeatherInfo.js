@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import {Image, ImageBackground, Pressable, StyleSheet, Text, View} from 'react-native';
 import { width, height } from "app/src/config/globalStyles";
 import { Box, Center, NativeBaseProvider, Button } from "native-base";
-
-
+import MainRecommendSection from "./MainRecommendSection";
+import MainNoReviewRecommend from "./MainNoReviewRecommend"
 
 export default function MainWeatherInfo(){
 
@@ -32,6 +32,8 @@ export default function MainWeatherInfo(){
                         {bytimevisible && <ByTimeInfo />}
                     </View>
             </ImageBackground>
+            {generalvisible && <MainRecommendSection />}
+            {bytimevisible && <MainNoReviewRecommend />}
         </Box>
     </NativeBaseProvider>;
 };
