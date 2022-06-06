@@ -33,7 +33,7 @@ const ModalView = () => {
 
       </View>
       <View style={{ paddingTop: 20 }}>
-        <TouchableOpacity style={styles.button} onPress={() => { Linking.openURL('https://www.musinsa.com/search/musinsa/integration?type=&q=HOODy') }}>
+        <TouchableOpacity style={styles.button} onPress={() => { Linking.openURL('https://www.musinsa.com/search/musinsa/integration?type=&q=Jacket') }}>
           <Text style={{ fontSize: 20, color: 'white', fontWeight: '700' }}>Go to MUSINSA</Text>
         </TouchableOpacity>
       </View>
