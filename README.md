@@ -15,7 +15,7 @@
 |      Gyeonmin Kim      |        Suyeon Maeng        |          Yujin Seol          |         Jungeun Kim        |
 |:----------------------:|:--------------------------:|:----------------------------:|:--------------------------:|
 |                        |                            |                              |                            |
-| Mypage Initial Setting | Mainpage's cloth component | Mainpage's weather-component | Location page Modal Design |
+| Mypage<br> Initial Setting | Mainpage's cloth component | Mainpage's weather-component | Location page<br> Modal Design |
 
 
 ## :sparkles: Features ##  
