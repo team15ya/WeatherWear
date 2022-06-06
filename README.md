@@ -12,7 +12,7 @@
 
 ## :rocket: Author ##  
 
-| Gyoungnmin Kim<br> [gmkim20713](https://github.com/gmkim20713) | Suyeon Maeng<br> [maengsuyeon](https://github.com/maengsuyeon) | Yujin Seol<br> [rkdfc93](https://github.com/rkdfc93) | Jungeun Kim<br> [Jungeunkim-dev](https://github.com/Jungeunkim-dev) |
+| Gyoungmin Kim<br> [gmkim20713](https://github.com/gmkim20713) | Suyeon Maeng<br> [maengsuyeon](https://github.com/maengsuyeon) | Yujin Seol<br> [rkdfc93](https://github.com/rkdfc93) | Jungeun Kim<br> [Jungeunkim-dev](https://github.com/Jungeunkim-dev) |
 |:----------------------:|:--------------------------:|:----------------------------:|:--------------------------:|
 |                        |                            |                              |                            |
 | Mypage<br> Initial Setting | Mainpage's cloth component | Mainpage's weather-component | Location page<br> Modal Design |
