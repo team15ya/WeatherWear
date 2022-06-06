@@ -54,21 +54,21 @@ const Stack = createNativeStackNavigator();
 
 function Root() {
   return (
-    <Stack.Navigator initialRouteName="InitialSettings">
+    <Stack.Navigator 
+      initialRouteName="InitialSettings"
+      screenOptions={{ headerShown: false }}
+    >
       <Stack.Screen
         name="Location"
         component={LocationScreen}
-        options={{ headerShown: false }}
         />
       <Stack.Screen
         name="InitialSettings"
         component={InitialSettingScreen}
-        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="Mypage"
         component={MyPageScreen}
-        options={{ headerShown: false }}
       />
       <Stack.Screen name="Mainpage" component={MainpageScreen} />
     </Stack.Navigator>
@@ -82,9 +82,5 @@ function App() {
     </NavigationContainer>
   );
 }
-
-
-
-
 
 export default App;
