@@ -11,16 +11,36 @@ let day = 18;
 
 
 const DayList = () => {
-    return <Box alignItems="center" flexDirection="row"
-    >
-        <Button style={styles.today} onPress={() => console.log("hello world")}>{day}</Button>
-        <Button style={styles.day} onPress={() => console.log("hello world")}>{day+1}</Button>
-        <Button style={styles.day} onPress={() => console.log("hello world")}>{day+2}</Button>
-        <Button style={styles.selectday} onPress={() => console.log("hello world")}>{day+3}</Button>
-        <Button style={styles.day} onPress={() => console.log("hello world")}>{day+4}</Button>
-        <Button style={styles.day} onPress={() => console.log("hello world")}>{day+5}</Button>
-        <Button style={styles.day} onPress={() => console.log("hello world")}>{day+6}</Button>
-    </Box>;
+
+    const daySelected = (value) => {
+        console.log("Selected day : " + value);
+    };
+
+    return (
+        <Box style={styles.listContainer}>
+            <Button style={[styles.button, styles.today]} onPress={() => daySelected(day)}>
+                <Text style={styles.buttonText}>{day}</Text>
+            </Button>
+            <Button style={[styles.button, styles.day]} onPress={() => daySelected(day+1)}>
+                <Text style={styles.buttonText}>{day+1}</Text>
+            </Button>
+            <Button style={[styles.button, styles.day]} onPress={() => daySelected(day+2)}>
+                <Text style={styles.buttonText}>{day+2}</Text>
+            </Button>
+            <Button style={[styles.button, styles.selectday]} onPress={() => daySelected(day+3)}>
+                <Text style={styles.buttonText}>{day+3}</Text>
+            </Button>
+            <Button style={[styles.button, styles.day]} onPress={() => daySelected(day+4)}>
+                <Text style={styles.buttonText}>{day+4}</Text>
+            </Button>
+            <Button style={[styles.button, styles.day]} onPress={() => daySelected(day+5)}>
+                <Text style={styles.buttonText}>{day+5}</Text>
+            </Button>
+            <Button style={[styles.button, styles.day]} onPress={() => daySelected(day+6)}>
+                <Text style={styles.buttonText}>{day+6}</Text>
+            </Button>
+        </Box>
+    );
 };
 
 
@@ -36,34 +56,32 @@ export default () => {
 };
 
 const styles = StyleSheet.create({
+    listContainer: {
+        height: 55,
+        justifyContents: 'space-between',
+        alignItems: 'center',
+        flexDirection: "row",
+    },
+    button: {
+        borderRadius: 45,
+        width: 45,
+        height: 45,
+        margin: 5,
+    },
     today: {
-        borderRadius: 50,
         backgroundColor: '#CAB0AE',
-        borderStyle: 'solid',
         borderColor : '#707B90',
         borderWidth: 2.5,
-        width : width*250,
-        height : height*60,
-        marginTop: height*7,
-        marginLeft : width*30,
-        marginRight : width*30
     },
     selectday:{
-        borderRadius: 50,
         backgroundColor: '#707B90',
-        width : width*250,
-        height : height*60,
-        marginTop: height*7,
-        marginLeft : width*30,
-        marginRight : width*30
     },
     day:{
-        borderRadius: 50,
         backgroundColor: '#CAB0AE',
-        width : width*250,
-        height : height*60,
-        marginTop: height*7,
-        marginLeft : width*30,
-        marginRight : width*30
+    },
+    buttonText: {
+        fontSize: 13,
+        fontWeight: '700',
+        color: 'white',
     }
 })
