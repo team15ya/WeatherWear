@@ -5,126 +5,117 @@ import ClothNoReview from "../components/ClothNoReview";
 import MainConstitutionSettingButton from '../components/MainConstitutionSettingButton';
 
 export default function App(){
-  return <View style = {styles.container}>
-    <View></View>
-    <View style = {styles.sensitiveTo}>
-      <Text>Sensitive to</Text>
-      <MainConstitutionSettingButton/>
-    </View>
-    <View style = {styles.howbox}>
-      <Text style = {styles.how}>How about these?</Text>
-    </View>
-    <View style = {styles.recommend}>
-      <ImageBackground source = {require("../../assets/images/afternoon.png")} style={styles.bgImage}>
-        <ScrollView contentContainerStyle = {styles.box}>
-          <View style={styles.line}>
-            <View style = {styles.categorybox}>
-            <Text style ={styles.category}>OUTER</Text>
+  return (
+    <View style = {styles.container}>
+
+      <View style = {styles.headerContainer}>
+        <View style = {styles.howbox}>
+          <Text style = {styles.how}>How about these?</Text>
+        </View>
+        <MainConstitutionSettingButton/>
+      </View>
+
+      <View style = {styles.recommend}>
+        <ImageBackground source = {require("../../assets/images/afternoon.png")} style={styles.bgImage}>
+          <ScrollView>
+            <View style={styles.line}>
+              <View style = {styles.categorybox}>
+              <Text style ={styles.category}>OUTER</Text>
+              </View>
             </View>
-          </View>
-          <View style = {styles.reviewcontainer}>
-            <Cloth/>
-            <Cloth/>
-          </View>
-          <View style={styles.line}>
-            <View style = {styles.categorybox}>
-              <Text style ={styles.category}>TOP</Text>
+            <View style = {styles.reviewcontainer}>
+              <Cloth/>
+              <Cloth/>
             </View>
-          </View>
-          <View style = {styles.reviewcontainer}>
-            <Cloth/>
-          </View>
-          <View style={styles.line}>
-            <View style = {styles.categorybox}>
-              <Text style ={styles.category}>BOTTOM</Text>
+            <View style={styles.line}>
+              <View style = {styles.categorybox}>
+                <Text style ={styles.category}>TOP</Text>
+              </View>
             </View>
-          </View>
-          <View style = {styles.reviewcontainer}>
-            <Cloth />
-          </View>
-        </ScrollView>
-      </ImageBackground>
+            <View style = {styles.reviewcontainer}>
+              <Cloth/>
+            </View>
+            <View style={styles.line}>
+              <View style = {styles.categorybox}>
+                <Text style ={styles.category}>BOTTOM</Text>
+              </View>
+            </View>
+            <View style = {styles.reviewcontainer}>
+              <Cloth />
+            </View>
+          </ScrollView>
+        </ImageBackground>
+      </View>
+
     </View>
-  </View>;
+  );
 }
 
 const styles = StyleSheet.create({
-  container : {
+  container: {
     flex: 1, 
-    backgroundColor : '#FFF8F4',
-    justifyContent : 'space-between',
+    backgroundColor: '#FFF8F4',
+    padding: 7,
   },
-  city : {
-    flex: 1, 
-    justifyContent:"center",
-    alignItems: "center",
+  headerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
   },
-  sensitiveTo : {
-    alignItems : 'flex-end',
-    justifyContent : 'flex-end',
-    marginRight : 50
+  howbox: {
+    height: 28,
+    width: '62%',
+    backgroundColor: "#707B90",
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  how: {
+    fontSize: 15,
+    color: "white",
+    fontWeight: "600"
   },
   recommend: {
-    flex : 1.3,
-    justifyContent : 'center',
-    alignItems : 'center',
-    width : '100%',
-    height : 400,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  bgImage : {
-    width : '97%',
-    height : '100%',
-    marginLeft : 6,
-    position : 'relative'
+  bgImage: {
+    width: '100%',
+    height: '100%',
   },
-  how : {
-    fontSize : 16,
-    color : "white",
-    fontWeight : "600"
-  },
-  howbox : {
-    flex : 0.1,
-    backgroundColor : "#707B90",
-    justifyContent : 'center',
-    alignItems : 'center',
-    marginLeft : 9,
-    width : '55%',
-    borderTopLeftRadius : 15,
-    borderTopRightRadius :15
-  },
-  line : {
+  line: {
     borderBottomColor: '#CAB0AE',
     borderBottomWidth: 3,
-    marginVertical : 45,
-    width: '97%',
-    position : "relative"
+    marginVertical: 30,
+    width: '100%',
+    position: "relative"
   },
-  categorybox : {
-    flex : 1,
-    backgroundColor : '#CAB0AE',
-    borderBottomLeftRadius : 20,
-    borderBottomRightRadius : 20,
-    borderTopLeftRadius : 20,
-    borderTopRightRadius : 20,
-    width : '20%',
-    marginTop : -8,
-    marginLeft : 35,
-    position : "absolute",
-    justifyContent : 'center',
-    alignItems : 'center'
+  categorybox: {
+    flex: 1,
+    width: 87,
+    height: 27,
+    backgroundColor: '#CAB0AE',
+    borderRadius: 20,
+    marginTop: -12.5,
+    marginLeft: 19,
+    position: "absolute",
+    justifyConten: 'center',
+    alignItems: 'center'
   },
-  category : {
-    color : "white",
-    fontSize : 14,
-    fontWeight : "700",
-    justifyContent : 'center',
-    alignItems : 'center',
+  category: {
+    color: "white",
+    fontSize: 14,
+    fontWeight: "700",
+    marginTop: 2.5,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  box : {},
-  reviewcontainer : { 
-    flex : 1, 
-    width : '97%',
+  reviewcontainer: { 
+    flex: 1, 
+    width: '100%',
     flexDirection : 'row',
-    marginTop : -20,
+    marginBottom: 20,
   }
 })

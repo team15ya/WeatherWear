@@ -33,7 +33,7 @@ export default function MainConstitSettingButton(){
 
     return (
         <View style={styles.buttonContainer}>
-            <Text style={{paddingBottom:5}}>sensitive to</Text>
+            <Text style={{paddingBottom:1}}>sensitive to</Text>
             <Pressable
                 onPress={()=>setModalVisible(true)}
                 style={[styles.dropdown_default,styles.dropdown_modal_top, {borderBottomWidth:0}]}
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     },
     modalButtonContainer: {
         alignSelf: 'flex-end',
-        paddingTop: 349,
+        paddingTop: 359,
         paddingRight: 7,
     },
     dropdown_modal_top: {
