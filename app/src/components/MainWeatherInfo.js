@@ -139,7 +139,8 @@ const ByTimeInfo = () => {
 const styles = StyleSheet.create({
     generalBox: {
         width : width*220,
-        height : height*80
+        height : height*80,
+        alignItems:'center'
     },
     generaltext : {
         fontSize: "sm",

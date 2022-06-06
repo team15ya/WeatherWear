@@ -50,7 +50,7 @@ const Cloth = () => {
         <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
           <Image source={require("../../assets/images/jacket.png")} style={styles.clothIcon}></Image>
         </TouchableOpacity>
-        <Icon name="controller-volume" size={12} color="rgba(0,0,0,0.7)" style={styles.button} />
+        <Image source={require("../../assets/images/modal_icon.png")} style={styles.button}></Image>
       </View>
       <View style={styles.clothNameBox}>
         <Text style={styles.clothName}>Jacket</Text>
@@ -187,7 +187,8 @@ const styles = StyleSheet.create({
     flex: 1
   },
   button: {
-    marginLeft: 120
+    marginLeft: 120,
+    marginBottom: 5,
   },
   modalBackground: {
     flex: 1,
