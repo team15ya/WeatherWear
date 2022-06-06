@@ -17,33 +17,31 @@ export default function App(){
 
       <View style = {styles.recommend}>
         <ImageBackground source = {require("../../assets/images/afternoon.png")} style={styles.bgImage}>
-          <ScrollView>
-            <View style={styles.line}>
-              <View style = {styles.categorybox}>
-              <Text style ={styles.category}>OUTER</Text>
-              </View>
+          <View style={styles.line}>
+            <View style = {styles.categorybox}>
+            <Text style ={styles.category}>OUTER</Text>
             </View>
-            <View style = {styles.reviewcontainer}>
-              <Cloth/>
-              <Cloth/>
+          </View>
+          <View style = {styles.reviewcontainer}>
+            <Cloth/>
+            <Cloth/>
+          </View>
+          <View style={styles.line}>
+            <View style = {styles.categorybox}>
+              <Text style ={styles.category}>TOP</Text>
             </View>
-            <View style={styles.line}>
-              <View style = {styles.categorybox}>
-                <Text style ={styles.category}>TOP</Text>
-              </View>
+          </View>
+          <View style = {styles.reviewcontainer}>
+            <Cloth/>
+          </View>
+          <View style={styles.line}>
+            <View style = {styles.categorybox}>
+              <Text style ={styles.category}>BOTTOM</Text>
             </View>
-            <View style = {styles.reviewcontainer}>
-              <Cloth/>
-            </View>
-            <View style={styles.line}>
-              <View style = {styles.categorybox}>
-                <Text style ={styles.category}>BOTTOM</Text>
-              </View>
-            </View>
-            <View style = {styles.reviewcontainer}>
-              <Cloth />
-            </View>
-          </ScrollView>
+          </View>
+          <View style = {styles.reviewcontainer}>
+            <Cloth />
+          </View>
         </ImageBackground>
       </View>
 
@@ -82,6 +80,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   bgImage: {
+    marginTop: -1,
     width: '100%',
     height: '100%',
   },

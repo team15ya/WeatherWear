@@ -40,12 +40,8 @@ const Main = () => {
       </View>
 
       <DayList />
-      <View style={{ flex: 5 }}>
-        <InfoBox />
-      </View>
-      <View style={{ flex: 9 }}>
-        <MainRecommendSection />
-      </View>
+      <InfoBox />
+      <MainRecommendSection />
       
     </ScrollView>
   );
