@@ -5,38 +5,36 @@ const ModalView = () => {
 
   return (
     <View style={styles.layout}>
-      <View style={{ flexDirection: 'row' }}>
+      <View style={{ flexDirection: 'row', alignItems:'flex-end'}}>
         <View style={styles.clothe}>
-          <Text style={styles.title}>Hoody</Text>
           <Image
-            style={{ height: 100, width: 200, resizeMode: 'contain' }}
-            source={{ uri: 'https://thumbs.dreamstime.com/b/cloth-icon-website-design-desktop-envelopment-development-premium-pack-cloth-vector-thin-line-icon-164112544.jpg' }} />
+            style={{ height: 160, width: 200, resizeMode: 'contain' }}
+            source={require('../../assets/images/jacket_modal.png')} />
         </View>
 
 
-        <View style={{flexDirection:'column', paddingTop:20, paddingRight:40}}>
-          <View>
-            <Text>recommended for</Text>
+        <View style={{ flexDirection: 'column', paddingTop: 20, paddingRight: 40, alignItems: 'flex-end' }}>
+          <View style={{ alignItems: 'flex-end' }}>
+            <Text style={styles.title}>Jacket</Text>
           </View>
           <View style={styles.weather}>
-            <Text style={styles.figure}>temp  </Text>
-            <Text style={styles.value}>11</Text>
+            <Text style={styles.figure}>Recommended tmp</Text>
+            <Text style={styles.value}>11℃</Text>
           </View>
           <View style={styles.weather}>
-            <Text style={styles.figure}>PCPN  </Text>
-            <Text style={styles.value}>70%</Text>
-          </View>
-          <View style={styles.weather}>
-            <Text style={styles.figure}>wind  </Text>
-            <Text style={styles.value}>14km/h</Text>
+            <Text style={styles.figure}>Keyword</Text>
+            <View style={{flexDirection:'row'}}>
+              <Text style={styles.value}>wind</Text>
+              <Text style={styles.value}>rain</Text>
+            </View>
           </View>
 
         </View>
 
       </View>
-      <View style={{paddingTop:20}}>
+      <View style={{ paddingTop: 20 }}>
         <TouchableOpacity style={styles.button} onPress={() => { Linking.openURL('https://www.musinsa.com/search/musinsa/integration?type=&q=HOODy') }}>
-          <Text style={{ fontSize: 20, color: 'white' }}>Go to musinsa</Text>
+          <Text style={{ fontSize: 20, color: 'white', fontWeight: '700' }}>Go to MUSINSA</Text>
         </TouchableOpacity>
       </View>
 
@@ -47,47 +45,56 @@ const ModalView = () => {
 
 const styles = StyleSheet.create({
   layout: {
-    paddingTop:30,
-    paddingLeft:10,
-    paddingRight:10,
-    height:250,
+    paddingLeft: 10,
+    height: 270,
     width: "90%",
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    elevation: 4,
+    borderRadius: 15,
+    elevation: 5,
     backgroundColor: 'white',
     alignContent: 'center',
+    justifyContent:'center',
     alignItems: 'center'
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     color: 'black',
-    fontWeight: 'bold'
+    fontWeight: '900'
   },
   clothe: {
     flexDirection: 'column',
     alignContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'center',
+    
   },
   weather: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignContent: 'center',
-    alignItems: 'center'
+    alignItems:'flex-end',
+    marginTop:5,
   },
   figure: {
-    color: 'gray'
+    color: 'gray',
+    fontWeight: 'bold',
+    color: 'black',
   },
   value: {
-    fontSize: 18,
-    color: 'black'
+    fontSize: 15,
+    color: 'white',
+    backgroundColor: 'black',
+    borderRadius: 15,
+    paddingLeft: 7,
+    paddingRight: 7,
+    paddingTop: 3,
+    paddingBottom: 3,
+    marginLeft:5
   },
   button: {
-    height: 40,
-    width: 300,
-    backgroundColor: '#507EC1',
+    height: 45,
+    width: 280,
+    backgroundColor: 'grey',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 5
+    borderRadius: 30
   }
 });
 
