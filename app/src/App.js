@@ -1,56 +1,14 @@
 import * as React from 'react';
-import { View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import BoxEx from './components/MainWeatherType';
-import Day from './components/MainDayList'
-import InfoButton from './components/MainWeatherType'
-import InfoBox from './components/MainWeatherInfo'
-
 import InitialSettingScreen from './pages/InitialSetting';
-import MypageScreen from './pages/Mypage';
 import LocationScreen from './pages/Location';
-
-import Mainpage from './pages/Mainpage';
-import Main from './pages/Main';
-
-function MyPageScreen({ navigation }) {
-  return (
-    <Main/>
-  );
-}
-
-
-function MainpageScreen({ navigation }) {
-    return (
-        <View style={{ flex: 1, backgroundColor: '#FFF8F4' }}>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', flexDirection: 'row' }}>
-                <Day /><Day /><Day /><Day /><Day /><Day /><Day />
-            </View>
-            <View style={{ flex: 4 }}>
-                <View style={{ flex: 1.3 }}>
-                    <InfoButton />
-                </View>
-                <View style={{ flex: 4 }}>
-                    <InfoBox />
-                </View>
-
-            </View>
-            <View style={{ flex: 9, alignItems: 'center', justifyContent: 'center' }}>
-                <Button
-                    title="마이페이지(임시)"
-                    onPress={() =>
-                        navigation.navigate('Mypage')}
-                />
-            </View>
-        </View>
-    );
-}
+import MypageScreen from './pages/Mypage';
+import MainpageScreen from './pages/Main';
 
 
 const Stack = createNativeStackNavigator();
-
 
 function Root() {
   return (
@@ -59,18 +17,21 @@ function Root() {
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen
-        name="Location"
-        component={LocationScreen}
-        />
-      <Stack.Screen
         name="InitialSettings"
         component={InitialSettingScreen}
       />
       <Stack.Screen
-        name="Mypage"
-        component={MyPageScreen}
+        name="Location"
+        component={LocationScreen}
       />
-      <Stack.Screen name="Mainpage" component={MainpageScreen} />
+      <Stack.Screen
+        name="Mypage"
+        component={MypageScreen}
+      />
+      <Stack.Screen 
+        name="Mainpage" 
+        component={MainpageScreen} 
+      />
     </Stack.Navigator>
   );
 }
