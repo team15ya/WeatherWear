@@ -1,15 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Pressable, StyleSheet, Dimensions, Button } from 'react-native';
 import { WithLocalSvg } from 'react-native-svg';
 
 import BackIcon from '../../assets/images/arrow-back.svg';
 import SearchIcon from '../../assets/images/search.svg';
 import ConstitSettingButton from '../components/ConstitutionSettingButton';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useIsFocused } from '@react-navigation/native';
 
 
 const windowWidth = Dimensions.get('window').width;
 
 const MypageScreen = ({ navigation }) => {
+
+    const [location, setLocation] = useState('');
+    const isFocused = useIsFocused();
+
+    const getLocationData = async () => {
+        try {
+        const value = await AsyncStorage.getItem('location')
+        if (value !== null) {
+            setLocation(value);
+        }
+        } catch (e) {
+        alert('user location information fetch 실패');
+        }
+    };
+
+    useEffect(() => {
+        getLocationData();
+    }, [isFocused]);
+
     return (
         <View style={styles.container}>
             <View style={styles.headerContainer}>
@@ -43,7 +64,7 @@ const MypageScreen = ({ navigation }) => {
                 onPress={() => navigation.navigate('Location')}
                 style={styles.info}
             >
-                <Text style={styles.infoText}>(location info)</Text>
+                <Text style={styles.infoText}>{location}</Text>
                 <WithLocalSvg
                     width={32}
                     height={32}
