@@ -1,4 +1,5 @@
 import React from "react";
+import { View, Dimensions } from 'react-native';
 import { Button, Box, Center, NativeBaseProvider } from "native-base";
 import { width, height } from "app/src/config/globalStyles";
 import {StyleSheet, Text} from "react-native";
@@ -9,6 +10,7 @@ const time = {
 }
 let day = 18;
 
+const windowWidth = Dimensions.get('window').width;
 
 const DayList = () => {
 
@@ -17,7 +19,7 @@ const DayList = () => {
     };
 
     return (
-        <Box style={styles.listContainer}>
+        <View style={styles.listContainer}>
             <Button style={[styles.button, styles.today]} onPress={() => daySelected(day)}>
                 <Text style={styles.buttonText}>{day}</Text>
             </Button>
@@ -39,7 +41,7 @@ const DayList = () => {
             <Button style={[styles.button, styles.day]} onPress={() => daySelected(day+6)}>
                 <Text style={styles.buttonText}>{day+6}</Text>
             </Button>
-        </Box>
+        </View>
     );
 };
 
@@ -57,16 +59,16 @@ export default () => {
 
 const styles = StyleSheet.create({
     listContainer: {
-        height: 55,
-        justifyContents: 'space-between',
-        alignItems: 'center',
         flexDirection: "row",
+        height: 55,
+        width: windowWidth-24,
+        alignItems: 'center',
+        justifyContent: 'space-between',
     },
     button: {
         borderRadius: 45,
         width: 45,
         height: 45,
-        margin: 5,
     },
     today: {
         backgroundColor: '#CAB0AE',
