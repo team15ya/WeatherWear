@@ -23,10 +23,9 @@
 
 ## :popcorn: Demo ##  
 
-> Initial Setting page
+> Setting/My page
 
-
-| ![locationsetting](https://user-images.githubusercontent.com/67693142/172313010-e16202ec-d63e-4a58-93df-18fc81d309a6.gif) | ![setconstitution](https://user-images.githubusercontent.com/67693142/172313272-422b9337-b797-4f28-845a-d7c63732f2ef.gif) |
+| ![constitutionsetting](https://user-images.githubusercontent.com/67693142/172318126-158d9898-7f65-44b6-8e1e-23cd8dee94a2.gif) | ![setconstitution](https://user-images.githubusercontent.com/67693142/172313272-422b9337-b797-4f28-845a-d7c63732f2ef.gif) |
 |:-------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------:|
 |                                                      **set constitution**                                                     |                                                    **set location**                                                   |
 |                                               User can set [hot,cold,none] constitution                                               |                                         User can set desired location                                         |
@@ -34,12 +33,13 @@
 > Mainpage
 
 
-| ![generalbytimeTab](https://user-images.githubusercontent.com/67693142/172316237-a24e993c-2a4c-426f-b4be-764adfd9bbff.gif) | ![reviewButton](https://user-images.githubusercontent.com/67693142/172316249-888b4c50-66f5-4004-859c-22abad193697.gif) | ![gotoMusinsa](https://user-images.githubusercontent.com/67693142/172316688-ea5c67e9-d974-4034-8ed2-6c29a3a7129b.gif) |
+
+| ![mainView](https://user-images.githubusercontent.com/67693142/172317771-fb314823-de2e-49ef-8a7d-50360c5f4fa5.gif) | ![reviewButton](https://user-images.githubusercontent.com/67693142/172316249-888b4c50-66f5-4004-859c-22abad193697.gif) | ![gotoMusinsa](https://user-images.githubusercontent.com/67693142/172316688-ea5c67e9-d974-4034-8ed2-6c29a3a7129b.gif) |
 |:--------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------:|
 |                                                   **General/By Time tab**                                                  |                                                       **Review**                                                       |                                                    **Redirection**                                                    |
 |                                      User can get desired type of weather information                                      |                                              User can check&add own review                                             |                                      User can get purchaseable shopping mall link                                     |
 
-## :rocket: Technologies ##  
+## :hammer_and_wrench: Technologies ##  
 
 The following tools were used in this project:
 
