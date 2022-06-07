@@ -30,7 +30,7 @@
 <div align="center">
 
 
-| ![constitutionsetting](https://user-images.githubusercontent.com/67693142/172318126-158d9898-7f65-44b6-8e1e-23cd8dee94a2.gif) | ![setconstitution](https://user-images.githubusercontent.com/67693142/172313272-422b9337-b797-4f28-845a-d7c63732f2ef.gif) |
+| ![revised_constitution](https://user-images.githubusercontent.com/67693142/172379235-64b9feae-95f2-4572-a8b1-d078630467af.gif) | ![setconstitution](https://user-images.githubusercontent.com/67693142/172313272-422b9337-b797-4f28-845a-d7c63732f2ef.gif) |
 |:-------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------:|
 |                                                      **Set constitution**                                                     |                                                    **Set location**                                                   |
 |                                               User can set [hot,cold,none] constitution                                               |                                         User can set desired location                                         |
@@ -44,7 +44,7 @@
 | ![mainView](https://user-images.githubusercontent.com/67693142/172317771-fb314823-de2e-49ef-8a7d-50360c5f4fa5.gif) | ![reviewButton](https://user-images.githubusercontent.com/67693142/172316249-888b4c50-66f5-4004-859c-22abad193697.gif) | ![gotoMusinsa](https://user-images.githubusercontent.com/67693142/172316688-ea5c67e9-d974-4034-8ed2-6c29a3a7129b.gif) |
 |:--------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------:|
 |                                                   **General/By Time tab**                                                  |                                                       **Review**                                                       |                                                    **Redirection**                                                    |
-|                                      User can get desired type of weather information                                      |                                              User can check&add own review                                             |                                      User can get purchaseable shopping mall link                                     |
+|                                      User can get desired type of weather information                                      |                                              User can check&add review                                             |                                      User can get purchaseable shopping mall link                                     |
 
 </div>  
  
