@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Modal, Pressable } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { WithLocalSvg } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -12,6 +12,15 @@ export default function ConstitSettingButton(){
     const [modalVisible, setModalVisible] = useState(false);
     const [constitution, setConstitution] = useState('NONE');
     const isFocused = useIsFocused();
+
+    const setConstitutionData = async (value) => {
+        try {
+            await AsyncStorage.setItem('constitution', value)
+            console.log('User constitution set to "' + value + '"')
+        } catch (e) {
+            console.log('User constitution data 저장 오류')
+        }
+    };
 
     const getConstitutionData = async () => {
         try {
@@ -43,57 +52,31 @@ export default function ConstitSettingButton(){
                 />
             </Pressable>
   
-            <ConstitModal 
-                visible={modalVisible} 
-                onClose={() => [setModalVisible(false), , getConstitutionData()]}
-            />
+            { modalVisible && 
+                <View>
+                    <Pressable
+                        style={[styles.dropdown_default, styles.dropdown_modal_top]}
+                        onPress={()=>[setConstitutionData('NONE'), getConstitutionData(), setModalVisible(false)]}
+                    >
+                        <Text style={styles.dropdown_text}>NONE</Text>
+                    </Pressable>
+                    <Pressable
+                        style={[styles.dropdown_default, styles.dropdown_modal_mid]}
+                        onPress={()=>[setConstitutionData('HOT'), getConstitutionData(), setModalVisible(false)]}
+                    >
+                        <Text style={styles.dropdown_text}>HOT</Text>
+                    </Pressable>
+                    <Pressable
+                        style={[styles.dropdown_default, styles.dropdown_modal_bottom]}
+                        onPress={()=>[setConstitutionData('COLD'), getConstitutionData(), setModalVisible(false)]}
+                    >
+                        <Text style={styles.dropdown_text}>COLD</Text>
+                    </Pressable>
+                </View>
+            }
         </View>
     );
   }
-
-const ConstitModal = ({visible, onClose}) => {
-  
-    const setConstitutionData = async (value) => {
-        try {
-            await AsyncStorage.setItem('constitution', value)
-            console.log('User constitution set to "' + value + '"')
-        } catch (e) {
-            console.log('User constitution data 저장 오류')
-        }
-    };
-
-    return (
-        <Modal
-            visible={visible}
-            animationType='none'
-            transparent={true}
-        >
-            <Pressable 
-                style={styles.modalView}
-                onPress={() => onClose()}
-            >
-                <Pressable
-                    style={[styles.dropdown_default, styles.dropdown_modal_top]}
-                    onPress={()=>[setConstitutionData('NONE'), onClose()]}
-                >
-                    <Text style={styles.dropdown_text}>NONE</Text>
-                </Pressable>
-                <Pressable
-                    style={[styles.dropdown_default, styles.dropdown_modal_mid]}
-                    onPress={()=>[setConstitutionData('HOT'), onClose()]}
-                >
-                    <Text style={styles.dropdown_text}>HOT</Text>
-                </Pressable>
-                <Pressable
-                    style={[styles.dropdown_default, styles.dropdown_modal_bottom]}
-                    onPress={()=>[setConstitutionData('COLD'), onClose()]}
-                >
-                    <Text style={styles.dropdown_text}>COLD</Text>
-                </Pressable>
-            </Pressable>
-        </Modal>
-    );
-}
 
 const styles = StyleSheet.create({
     dropdown_default: {
@@ -114,12 +97,6 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         color: '#5F5F5F',
         paddingLeft: 23,
-    },
-    modalView: {
-        flex: 1,
-        paddingTop: 394,
-        paddingLeft: 121,
-        backgroundColor: '#00000022',
     },
     dropdown_modal_top: {
         borderRadius: 15,
