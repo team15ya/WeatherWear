@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Modal, Pressable, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Dimensions } from 'react-native';
 import { WithLocalSvg } from 'react-native-svg';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -14,6 +14,15 @@ export default function MainConstitSettingButton(){
     const [modalVisible, setModalVisible] = useState(false);
     const [constitution, setConstitution] = useState('NONE');
     const isFocused = useIsFocused();
+
+    const setConstitutionData = async (value) => {
+        try {
+            await AsyncStorage.setItem('constitution', value)
+            console.log('User constitution set to "' + value + '"')
+        } catch (e) {
+            console.log('User constitution data 저장 오류')
+        }
+    };
 
     const getConstitutionData = async () => {
         try {
@@ -45,64 +54,37 @@ export default function MainConstitSettingButton(){
                     asset={DownIcon}
                 />
             </Pressable>
-  
-            <ConstitModal 
-                visible={modalVisible} 
-                onClose={() => [setModalVisible(false), , getConstitutionData()]}
-            />
-        </View>
-    );
-  }
 
-const ConstitModal = ({visible, onClose}) => {
-  
-    const setConstitutionData = async (value) => {
-        try {
-            await AsyncStorage.setItem('constitution', value)
-            console.log('User constitution set to "' + value + '"')
-        } catch (e) {
-            console.log('User constitution data 저장 오류')
-        }
-    };
-
-    return (
-        <Modal
-            visible={visible}
-            animationType='none'
-            transparent={true}
-        >
-            <Pressable 
-                style={styles.modalView}
-                onPress={() => onClose()}
-            >
-                <View style={styles.modalButtonContainer}>
+            { modalVisible && 
+                <View style={styles.dropdownContainer}>
                     <Pressable
                         style={[styles.dropdown_default, styles.dropdown_modal_top]}
-                        onPress={()=>[setConstitutionData('NONE'), onClose()]}
+                        onPress={()=>[setConstitutionData('NONE'), getConstitutionData(), setModalVisible(false)]}
                     >
                         <Text style={styles.dropdown_text}>NONE</Text>
                     </Pressable>
                     <Pressable
                         style={[styles.dropdown_default, styles.dropdown_modal_mid]}
-                        onPress={()=>[setConstitutionData('HOT'), onClose()]}
+                        onPress={()=>[setConstitutionData('HOT'), getConstitutionData(), setModalVisible(false)]}
                     >
                         <Text style={styles.dropdown_text}>HOT</Text>
                     </Pressable>
                     <Pressable
                         style={[styles.dropdown_default, styles.dropdown_modal_bottom]}
-                        onPress={()=>[setConstitutionData('COLD'), onClose()]}
+                        onPress={()=>[setConstitutionData('COLD'), getConstitutionData(), setModalVisible(false)]}
                     >
                         <Text style={styles.dropdown_text}>COLD</Text>
                     </Pressable>
                 </View>
-            </Pressable>
-        </Modal>
+            }
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
     buttonContainer: {
         width: windowWidth*0.35,
+        height: 50,
         alignItems: 'center',
         alignSelf: 'flex-end',
     },
@@ -124,14 +106,10 @@ const styles = StyleSheet.create({
         color: '#5F5F5F',
         paddingLeft: 43,
     },
-    modalView: {
-        flex: 1,
-        backgroundColor: '#00000022',
-    },
-    modalButtonContainer: {
-        alignSelf: 'flex-end',
-        paddingTop: 373,
-        paddingRight: 7,
+    dropdownContainer: {
+        position: 'absolute',
+        zIndex: 1,
+        paddingTop: 50,
     },
     dropdown_modal_top: {
         borderRadius: 15,
