@@ -30,8 +30,7 @@ const styles = StyleSheet.create({
         width : '97%',
       },
       clothbox : {
-
-        flex : 0.45,
+        // flex : 0.45,
         width : 155,
         backgroundColor : 'rgba(255,255,255,0.7)',
         borderTopLeftRadius :15,
@@ -39,7 +38,8 @@ const styles = StyleSheet.create({
         marginLeft : 20,
         justifyContent : 'center',
         alignItems : 'center',
-        position : 'relative'
+        position : 'relative',
+        height : 100 //수정
       },
       clothIcon :{
         width : 80,
