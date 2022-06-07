@@ -33,7 +33,7 @@ export default function MainConstitSettingButton(){
 
     return (
         <View style={styles.buttonContainer}>
-            <Text style={{paddingBottom:1}}>sensitive to</Text>
+            <Text style={styles.constitDescr}>sensitive to</Text>
             <Pressable
                 onPress={()=>setModalVisible(true)}
                 style={[styles.dropdown_default,styles.dropdown_modal_top, {borderBottomWidth:0}]}
@@ -147,5 +147,10 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
+    },
+    constitDescr:{
+        fontSize: 15,
+        color: '#7F7F7F',
+        paddingBottom: 1,
     },
 });
