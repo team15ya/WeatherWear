@@ -30,7 +30,8 @@
 <div align="center">
 
 
-| ![revised_constitution](https://user-images.githubusercontent.com/67693142/172379235-64b9feae-95f2-4572-a8b1-d078630467af.gif) | ![setconstitution](https://user-images.githubusercontent.com/67693142/172313272-422b9337-b797-4f28-845a-d7c63732f2ef.gif) |
+
+| ![final_constitution](https://user-images.githubusercontent.com/67693142/172411785-885b86e0-267a-4efb-97d3-84229dfa197e.gif) | ![setconstitution](https://user-images.githubusercontent.com/67693142/172313272-422b9337-b797-4f28-845a-d7c63732f2ef.gif) |
 |:-------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------:|
 |                                                      **Set constitution**                                                     |                                                    **Set location**                                                   |
 |                                               User can set [hot,cold,none] constitution                                               |                                         User can set desired location                                         |
