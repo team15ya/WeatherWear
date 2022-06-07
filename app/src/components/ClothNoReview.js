@@ -14,7 +14,7 @@ const ClothNoReview = () => {
         <View style = {styles.clothContainer}>
             <View style = {styles.clothbox}>
                 <Image source = {require("../../assets/images/jacket.png")} style = {styles.clothIcon}></Image>
-                <Icon name="controller-volume" size={12} color="rgba(0,0,0,0.7)" style = {styles.button} />
+                <Image source={require("../../assets/images/modal_icon.png")} style={styles.modalButton}></Image>
             </View>
             <View style = {styles.clothNameBox}>
                 <Text style = {styles.clothName}>Jacket</Text>
@@ -67,7 +67,11 @@ const styles = StyleSheet.create({
       },
       button : {
         marginLeft : 120
-      }
+      },
+      modalButton: {
+        marginLeft: 120,
+        marginBottom: 5,
+      },
 })
 
 export default ClothNoReview;
