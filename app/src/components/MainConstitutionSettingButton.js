@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     },
     modalButtonContainer: {
         alignSelf: 'flex-end',
-        paddingTop: 359,
+        paddingTop: 373,
         paddingRight: 7,
     },
     dropdown_modal_top: {
