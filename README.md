@@ -78,6 +78,7 @@ $ yarn
 $ yarn react-native run-android  
   
 # The server will initialize in the <http://localhost:8081>  
+# You need to set GOOGLE MAP API KEY
 ```  
 
 
